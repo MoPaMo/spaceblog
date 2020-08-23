@@ -8,7 +8,7 @@ function db()
     {
         $adresse = "localhost";
         $benutzer = "sbot";
-        $passwort = $_ENV["sdbpwd"];
+        $passwort = getenv("sdbpwd");
         $dbName = "blog";
         
         $aConnection =
@@ -16,7 +16,7 @@ function db()
         
         if ($aConnection->connect_error)
         {
-            echo "Verbindungsfehler: " . $aConnection->connect_error;
+            echo "Connection error: " . $aConnection->connect_error;
             exit();
         }
     }
@@ -32,7 +32,7 @@ function adb()
     {
         $adresse = "localhost";
         $benutzer = "abot";
-        $passwort = $_ENV["adbpwd"];
+        $passwort = getenv("adbpwd");
         $dbName = "blog";
         
         $aConnection =
@@ -40,7 +40,7 @@ function adb()
         
         if ($aConnection->connect_error)
         {
-            echo "Verbindungsfehler: " . $aConnection->connect_error;
+            echo "Connection error: " . $aConnection->connect_error;
             exit();
         }
     }
