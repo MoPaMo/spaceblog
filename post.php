@@ -218,7 +218,7 @@
             <p>
               As I stand out here in the wonders of the unknown at Hadley, I
               sort of realize there’s a fundamental truth to our nature, Man
-              must explore, and this is exploration at its greatest.
+              must explore, and this is exploration at its greatest.<?php echo urlencode("https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");?>
             </p>
 
             <p>
@@ -234,7 +234,7 @@
         <ul class="share-buttons" data-source="simplesharingbuttons.com">
           <li>
             <a
-              href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fhttps%3A%2F%2Fspaceblog.glitch.me&quote=spaceBlog%3A%20article"
+              href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode("https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");?>&quote=spaceBlog%3A%20article"
               target="_blank"
               title="Share on Facebook"
               ><i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i
@@ -243,7 +243,7 @@
           </li>
           <li>
             <a
-              href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fhttps%3A%2F%2Fspaceblog.glitch.me&text=spaceBlog%3A%20article:%20http%3A%2F%2Fhttps%3A%2F%2Fspaceblog.glitch.me"
+              href="https://twitter.com/intent/tweet?source=h<?php echo urlencode("https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");?>&text=spaceBlog%3A%20article:%20<?php echo urlencode("https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");?>"
               target="_blank"
               title="Tweet"
               ><i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i
@@ -252,7 +252,7 @@
           </li>
           <li>
             <a
-              href="https://plus.google.com/share?url=http%3A%2F%2Fhttps%3A%2F%2Fspaceblog.glitch.me"
+              href="https://plus.google.com/share?url=<?php echo urlencode("https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");?>"
               target="_blank"
               title="Share on Google+"
               ><i class="fab fa-google-plus-square fa-2x" aria-hidden="true"></i
@@ -261,7 +261,7 @@
           </li>
           <li>
             <a
-              href="http://www.tumblr.com/share?v=3&u=http%3A%2F%2Fhttps%3A%2F%2Fspaceblog.glitch.me&quote=spaceBlog%3A%20article&s="
+              href="http://www.tumblr.com/share?v=3&u=<?php echo urlencode("https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");?>&quote=spaceBlog%3A%20article&s="
               target="_blank"
               title="Post to Tumblr"
               ><i class="fab fa-tumblr-square fa-2x" aria-hidden="true"></i
@@ -270,14 +270,23 @@
           </li>
           <li>
             <a
-              href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fhttps%3A%2F%2Fspaceblog.glitch.me&description=Found%20this%20article%20on%20spaceBlog%3A"
+              href="http://pinterest.com/pin/create/button/?url=<?php echo urlencode("https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");?>&description=Found%20this%20article%20on%20spaceBlog%3A"
               target="_blank"
               title="Pin it"
               ><i class="fab fa-pinterest-square fa-2x" aria-hidden="true"></i
               ><span class="sr-only">Pin it</span></a
             >
           </li>
-          <!--  <li><a href="https://getpocket.com/save?url=http%3A%2F%2Fhttps%3A%2F%2Fspaceblog.glitch.me&title=spaceBlog%3A%20article" target="_blank" title="Add to Pocket"><i class="fab fab fa-get-pocket fa-2x" aria-hidden="true"></i><span class="sr-only">Add to Pocket</span></a></li></a></li>-->
+          <li>
+            <a
+              href="https://getpocket.com/save?url=http%3A%2F%2Fhttps%3A%2F%2Fspaceblog.glitch.me&title=spaceBlog%3A%20article"
+              target="_blank"
+              title="Add to Pocket"
+            >
+              <i class="fab fab fa-get-pocket fa-2x" aria-hidden="true"></i>
+              <span class="sr-only">Add to Pocket</span>
+            </a>
+          </li>
           <li>
             <a
               href="http://www.reddit.com/submit?url=http%3A%2F%2Fhttps%3A%2F%2Fspaceblog.glitch.me&title=spaceBlog%3A%20article"
@@ -298,7 +307,7 @@
           </li>
           <li>
             <a
-              href="http://wordpress.com/press-this.php?u=http%3A%2F%2Fhttps%3A%2F%2Fspaceblog.glitch.me&quote=spaceBlog%3A%20article&s=Found%20this%20article%20on%20spaceBlog%3A"
+              href="http://wordpress.com/press-this.php?u=<?php echo urlencode("http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");?>&quote=spaceBlog%3A%20article&s=Found%20this%20article%20on%20spaceBlog%3A"
               target="_blank"
               title="Publish on WordPress"
               ><i class="fab fa-wordpress fa-2x" aria-hidden="true"></i
