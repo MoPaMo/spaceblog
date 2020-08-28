@@ -243,7 +243,7 @@
           </li>
           <li>
             <a
-              href="https://twitter.com/intent/tweet?source=h<?php echo urlencode("https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");?>&text=spaceBlog%3A%20article:%20<?php echo urlencode("https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");?>"
+              href="https://twitter.com/intent/tweet?source=<?php echo urlencode("https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");?>&text=spaceBlog%3A%20article:%20<?php echo urlencode("https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");?>"
               target="_blank"
               title="Tweet"
               ><i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i
@@ -252,7 +252,7 @@
           </li>
           <li>
             <a
-              href="https://plus.google.com/share?url=<?php echo urlencode("https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");?>"
+              href="https://plus.google.com/share?url=<?php echo htmlentities(urlencode("https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"));?>"
               target="_blank"
               title="Share on Google+"
               ><i class="fab fa-google-plus-square fa-2x" aria-hidden="true"></i
@@ -279,7 +279,7 @@
           </li>
           <li>
             <a
-              href="https://getpocket.com/save?url=http%3A%2F%2Fhttps%3A%2F%2Fspaceblog.glitch.me&title=spaceBlog%3A%20article"
+              href="https://getpocket.com/save?url=<?php echo urlencode("https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");?>&title=spaceBlog%3A%20article"
               target="_blank"
               title="Add to Pocket"
             >
