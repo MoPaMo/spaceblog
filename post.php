@@ -1,6 +1,11 @@
 <?php
 
-
+include("db.php");
+$conn=db();
+$res1=$conn->query("SELECT * FROM posts");
+if(count($res1)>0){
+$res2=$res1->fetch_all(MYSQLI_ASSOC);
+$res= $res2[0];}
 ?><!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,7 +17,7 @@
     <meta name="description" content="A personal blog" />
     <meta name="author" content="MoPaMo" />
 
-    <title>spaceBlog</title>
+    <title><?php echo $res["title"];?> -- spaceBlog</title>
 
     <!-- Bootstrap core CSS -->
     <link
@@ -108,14 +113,14 @@
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="post-heading">
-              <h1>Man must explore, and this is exploration at its greatest</h1>
+              <h1><?php echo $res["title"];?> </h1>
               <h2 class="subheading">
-                Problems look mighty small from 150 miles up
+                <?php echo $res["title"];?> 
               </h2>
               <span class="meta"
                 >Posted by
-                <a href="#">Start Bootstrap</a>
-                on August 24, 2019</span
+                <a href="#"><?php echo $res["author"];?> </a>
+                on <?php echo $res["created"];?> </span
               >
             </div>
           </div>
