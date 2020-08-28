@@ -120,7 +120,7 @@ $res= $res2[0];}
               <span class="meta"
                 >Posted by
                 <a href="#"><?php echo $res["author"];?> </a>
-                on <?php echo $res["created"];?> </span
+                on <?php echo date("Y-m-d H:i:s", $res["created"]);?> </span
               >
             </div>
           </div>
