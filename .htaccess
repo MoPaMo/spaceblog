@@ -1,0 +1,1 @@
+RewriteRule    ^article/([0-9]+)/?$    post.php?i=$1    [NC,L]    # Handle product requests
