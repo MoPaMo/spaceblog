@@ -71,7 +71,7 @@ $res= $res2[0];}
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand" href=">Start Bootstrap</a>
+        <a class="navbar-brand" href="/">spaceBlog</a>
         <button
           class="navbar-toggler navbar-toggler-right"
           type="button"
@@ -87,16 +87,16 @@ $res= $res2[0];}
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
+              <a class="nav-link" href="/">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about.html">Über</a>
+              <a class="nav-link" href="/about.html">Über</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="post.html">Zufälliger Post</a>
+              <a class="nav-link" href="/post.html">Zufälliger Post</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact.html">Kontakt</a>
+              <a class="nav-link" href="/contact.html">Kontakt</a>
             </li>
           </ul>
         </div>
@@ -121,7 +121,7 @@ $res= $res2[0];}
                 >Posted by
                 <a href="#"><?php echo $res["author"];?> </a>
                 on <?php echo date("Y-m-d H:i:s", $res["created"]);?> </span
-              >
+              ><?php if(isset($_GET["id"])){echo $_GET["id"];}?>
             </div>
           </div>
         </div>

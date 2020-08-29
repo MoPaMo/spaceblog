@@ -1,3 +1,7 @@
+<?php 
+include("db.php");
+if(isset($_POST["password"]))
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -76,9 +80,9 @@
 
     <form action="" method="POST">
       <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        <label for="titleinput">Title</label>
+        <input type="text" maxlength="50" class="form-control" id="titleinput" aria-describedby="emailHelp" placeholder="Enter email">
+        <small id="emailHelp" class="form-text text-muted"></small>
     </div>
     <div class="form-group">
       <label for="exampleInputPassword1">Password</label>

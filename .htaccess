@@ -1,2 +1,3 @@
 RewriteEngine On
-RewriteRule    ^article/$  post.php?i=    [NC,L]    # Handle product requests
+RewriteRule    ^article/([0-9]+)$  post.php?id=$1    [NC,L]    # Rewrite all /article/ to post.php
+RewriteRule    ^article/$  post.php    [NC,L]    #if no id provided, rewrite without get attr
