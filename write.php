@@ -81,12 +81,23 @@ if(isset($_POST["password"]))
     <form action="" method="POST">
       <div class="form-group">
         <label for="titleinput">Title</label>
-        <input type="text" maxlength="50" class="form-control" id="titleinput" aria-describedby="emailHelp" placeholder="Enter email">
-        <small id="emailHelp" class="form-text text-muted"></small>
+        <input type="text" maxlength="50" class="form-control" id="titleinput" aria-describedby="emailHelp" placeholder="Enter Title">
+    </div>
+      <div class="form-group">
+        <label for="shortInput">Short Description</label>
+        <input type="text" maxlength="50" class="form-control" id="shortInput" aria-describedby="emailHelp" placeholder="Enter Short Description">
+    </div>
+    <div class="form-group">
+        <label for="shortInput">Content</label>
+      <textarea type="text" rows="50" class="form-control" id="shortInput" aria-describedby="emailHelp" placeholder="Enter Your Content"></textarea>
+    </div>
+      <div class="form-group">
+        <label for="shortInput">Short Description</label>
+        <input type="text" maxlength="50" class="form-control" id="shortInput" aria-describedby="emailHelp" placeholder="Enter Short Description">
     </div>
     <div class="form-group">
       <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" name="pwd" placeholder="Password">
+      <input type="password" class="form-control" id="exampleInputPassword1" name="pwd" placeholder="Enter Your Admin-Password">
   </div>
   
   <button type="submit" class="btn btn-primary">Submit</button>
