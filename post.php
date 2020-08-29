@@ -23,7 +23,7 @@ if(isset($_GET["id"])){
     <meta name="description" content="A personal blog" />
     <meta name="author" content="MoPaMo" />
 
-    <title><?php echo $res["title"];?> -- spaceBlog</title>
+    <title><?php echo hex2bin($res["title"]);?> -- spaceBlog</title>
 
     <!-- Bootstrap core CSS -->
     <link
