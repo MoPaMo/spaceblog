@@ -5,7 +5,7 @@ if(isset($_GET["id"])){
   $res1=$conn->query("SELECT * FROM posts");
   if(count($res1)>0){
     $res2=$res1->fetch_all(MYSQLI_ASSOC);
-    $res= $res2[0];
+    $res= $res2[1];
   }
 }else{
   http_response_code(404);
@@ -23,7 +23,7 @@ if(isset($_GET["id"])){
     <meta name="description" content="A personal blog" />
     <meta name="author" content="MoPaMo" />
 
-    <title><?php echo hex2bin($res["title"]);?> -- spaceBlog</title>
+    <title><?php echo $res["title"];?> -- spaceBlog</title>
 
     <!-- Bootstrap core CSS -->
     <link
@@ -126,7 +126,7 @@ if(isset($_GET["id"])){
               <span class="meta"
                 >Posted by
                 <a href="#"><?php echo $res["author"];?> </a>
-                on <?php echo date("Y-m-d H:i:s", $res["created"]);?> </span
+                on <?php echo $res["created"];?> </span
               ><?php if(isset($_GET["id"])){echo $_GET["id"];}?>
             </div>
           </div>

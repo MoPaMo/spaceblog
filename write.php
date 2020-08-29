@@ -4,7 +4,7 @@ include("db.php");
 if(isset($_POST["pwd"])&&$_POST["pwd"]==getenv("pass")){
   echo "passed";
   if(isset($_POST["author"])&&$_POST["author"]!=""&& isset($_POST["title"])&&$_POST["title"]!=""&&isset($_POST["content"])&&$_POST["content"]!=""&&isset($_POST["short"])&&$_POST["short"]!=""){
-db()->query("INSERT INTO posts(title, short, content, author) VALUES (\"".bin2hex($_POST["title"])."\",\" ".bin2hex($_POST["short"])."\",\"".bin2hex($_POST["content"])."\",\"".bin2hex($_POST["author"])."\" )");
+adb()->( "INSERT INTO posts(title, short, content, author) VALUES (\"".bin2hex($_POST["title"])."\",\"".bin2hex($_POST["short"])."\",\"".bin2hex($_POST["content"])."\",\"".bin2hex($_POST["author"])."\");");
   echo "passed";
   }}                        
 ?>
