@@ -19,7 +19,7 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
 
   <!-- Custom styles for this template -->
-  <link href="clean-blog.min.css" rel="stylesheet">
+  <link href="/clean-blog.min.css" rel="stylesheet">
 
 </head>
 
@@ -132,7 +132,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 
   <!-- Custom scripts for this template -->
-  <script src="clean-blog.min.js"></script>
+  <script src="/clean-blog.min.js"></script>
 
 </body>
 

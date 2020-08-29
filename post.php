@@ -43,7 +43,7 @@ $res= $res2[0];}
     />
 
     <!-- Custom styles for this template -->
-    <link href="clean-blog.min.css" rel="stylesheet" />
+    <link href="/clean-blog.min.css" rel="stylesheet" />
     <style>
       ul.share-buttons {
         list-style: none;
@@ -71,7 +71,7 @@ $res= $res2[0];}
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+        <a class="navbar-brand" href=">Start Bootstrap</a>
         <button
           class="navbar-toggler navbar-toggler-right"
           type="button"
@@ -287,6 +287,6 @@ $res= $res2[0];}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 
     <!-- Custom scripts for this template -->
-    <script src="clean-blog.min.js"></script>
+    <script src="/clean-blog.min.js"></script>
   </body>
 </html>

@@ -1,1 +1,2 @@
+RewriteEngine On
 RewriteRule    ^article/$  post.php?i=    [NC,L]    # Handle product requests
