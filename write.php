@@ -88,12 +88,15 @@ if(isset($_POST["password"]))
         <input type="text" maxlength="50" class="form-control" id="shortInput" aria-describedby="emailHelp" placeholder="Enter Short Description">
     </div>
     <div class="form-group">
-        <label for="shortInput">Content</label>
-      <textarea type="text" rows="50" class="form-control" id="shortInput" aria-describedby="emailHelp" placeholder="Enter Your Content"></textarea>
+        <label for="content">Content</label>
+      <textarea rows="5" class="form-control" id="content" aria-describedby="postContent" placeholder="Enter Your Content"></textarea>
     </div>
       <div class="form-group">
-        <label for="shortInput">Short Description</label>
-        <input type="text" maxlength="50" class="form-control" id="shortInput" aria-describedby="emailHelp" placeholder="Enter Short Description">
+        <label for="author">Your Name</label>
+        <input type="text" maxlength="50" class="form-control" id="author" aria-describedby="authorHelp" placeholder="Enter Your Name"/>
+        <small id="authorHelp" class="form-text text-muted">
+  Your name will be shown at your posts
+</small>
     </div>
     <div class="form-group">
       <label for="exampleInputPassword1">Password</label>
