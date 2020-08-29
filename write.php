@@ -1,7 +1,7 @@
 <?php 
 include("db.php");
-
-if(isset($_POST["pwd"])&&$_POST["pwd"]==env("PWD"))echo "passed";
+echo $_POST["pwd"];
+if(isset($_POST["pwd"])&&$_POST["pwd"]==$_ENV["PWD"]){echo "passed";}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -92,17 +92,17 @@ if(isset($_POST["pwd"])&&$_POST["pwd"]==env("PWD"))echo "passed";
         <label for="content">Content</label>
       <textarea rows="5" class="form-control" id="content" aria-describedby="postContent" placeholder="Enter Your Content"></textarea>
     </div>
-      <div class="form-group">
-        <label for="author">Your Name</label>
-        <input type="text" maxlength="50" class="form-control" id="author" aria-describedby="authorHelp" placeholder="Enter Your Name"/>
-        <small id="authorHelp" class="form-text text-muted">
-  Your name will be shown at your posts
-</small>
+    <div class="form-group">
+      <label for="author">Your Name</label>
+      <input type="text" maxlength="50" class="form-control" id="author" aria-describedby="authorHelp" placeholder="Enter Your Name"/>
+      <small id="authorHelp" class="form-text text-muted">
+        Your name will be shown at your posts
+      </small>
     </div>
     <div class="form-group">
       <label for="exampleInputPassword1">Password</label>
       <input type="password" class="form-control" id="exampleInputPassword1" name="pwd" placeholder="Enter Your Admin-Password">
-  </div>
+    </div>
   
   <button type="submit" class="btn btn-primary">Submit</button>
   </form>
