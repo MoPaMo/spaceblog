@@ -1,12 +1,10 @@
 <?php 
 include("db.php");
 
-if(isset($_POST["pwd"])&&$_POST["pwd"]==getenv("pass"))
-  {
+if(isset($_POST["pwd"])&&$_POST["pwd"]==getenv("pass")){
   echo "passed";
-  if(isset($_POST["author"])&&$_POST["author"]!=""&&$_POST["content"])&&$_POST["content"]!=""&&$_POST["short"])&&$_POST["short"]!="")
-                                                        
-                                                       }
+  if(isset($_POST["author"])&&$_POST["author"]!=""&&isset($_POST["content"])&&$_POST["content"]!=""&&isset($_POST["short"])&&$_POST["short"]!=""){
+echo "!";}}                        
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -87,19 +85,19 @@ if(isset($_POST["pwd"])&&$_POST["pwd"]==getenv("pass"))
     <form action="" method="POST">
       <div class="form-group">
         <label for="titleinput">Title</label>
-        <input type="text" maxlength="50" class="form-control" id="titleinput" aria-describedby="emailHelp" placeholder="Enter Title">
+        <input type="text" maxlength="50" class="form-control" id="titleinput" name="title" aria-describedby="emailHelp" placeholder="Enter Title">
     </div>
       <div class="form-group">
         <label for="shortInput">Short Description</label>
-        <input type="text" maxlength="50" class="form-control" id="shortInput" aria-describedby="emailHelp" placeholder="Enter Short Description">
+        <input type="text" maxlength="50" class="form-control" name="short" id="shortInput" aria-describedby="emailHelp" placeholder="Enter Short Description">
     </div>
     <div class="form-group">
         <label for="content">Content</label>
-      <textarea rows="5" class="form-control" id="content" aria-describedby="postContent" placeholder="Enter Your Content"></textarea>
+      <textarea rows="5" class="form-control" id="content" name="content" aria-describedby="postContent" placeholder="Enter Your Content"></textarea>
     </div>
     <div class="form-group">
       <label for="author">Your Name</label>
-      <input type="text" maxlength="50" class="form-control" id="author" aria-describedby="authorHelp" placeholder="Enter Your Name"/>
+      <input type="text" maxlength="50" class="form-control" id="author" name="author" aria-describedby="authorHelp" placeholder="Enter Your Name"/>
       <small id="authorHelp" class="form-text text-muted">
         Your name will be shown at your posts
       </small>
