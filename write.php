@@ -1,7 +1,12 @@
 <?php 
 include("db.php");
-echo  getenv("dump");
-if(isset($_POST["pwd"])&&$_POST["pwd"]==$_ENV["PWD"]){echo "passed";}
+
+if(isset($_POST["pwd"])&&$_POST["pwd"]==getenv("pass"))
+  {
+  echo "passed";
+  if(isset($_POST["author"])&&$_POST["author"]!=""&&$_POST["content"])&&$_POST["content"]!=""&&$_POST["short"])&&$_POST["short"]!="")
+                                                        
+                                                       }
 ?>
 <!DOCTYPE html>
 <html lang="en">
