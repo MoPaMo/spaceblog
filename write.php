@@ -1,6 +1,6 @@
 <?php 
 include("db.php");
-echo process.env.dump;
+echo  getenv("dump");
 if(isset($_POST["pwd"])&&$_POST["pwd"]==$_ENV["PWD"]){echo "passed";}
 ?>
 <!DOCTYPE html>
