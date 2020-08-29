@@ -1,6 +1,7 @@
 <?php 
 include("db.php");
-if(isset($_POST["password"]))
+
+if(isset($_POST["pwd"])&&$_POST["pwd"]==env("PWD"))echo "passed";
 ?>
 <!DOCTYPE html>
 <html lang="en">
