@@ -1,11 +1,17 @@
 <?php
-
-include("db.php");
-$conn=db();
-$res1=$conn->query("SELECT * FROM posts");
-if(count($res1)>0){
-$res2=$res1->fetch_all(MYSQLI_ASSOC);
-$res= $res2[0];}
+if(isset($_GET["id"])){
+  include("db.php");
+  $conn=db();
+  $res1=$conn->query("SELECT * FROM posts");
+  if(count($res1)>0){
+    $res2=$res1->fetch_all(MYSQLI_ASSOC);
+    $res= $res2[0];
+  }
+}else{
+  http_response_code(404);
+  include('404.html'); // provide your own HTML for the error page
+  die();
+}
 ?><!DOCTYPE html>
 <html lang="en">
   <head>
