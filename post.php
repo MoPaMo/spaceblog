@@ -165,7 +165,7 @@ if(isset($_GET["id"])){
           </li>
           <li>
             <a
-              href="https://twitter.com/intent/tweet?source=<?php echo urlencode(urlencode("https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"));?>&text=spaceBlog%3A%20article:%20<?php echo urlencode("https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");?>"
+              href="https://twitter.com/intent/tweet?source=<?php echo urlencode("https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");?>&text=spaceBlog%3A%20article:%20<?php echo urlencode("https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");?>"
               target="_blank"
               title="Tweet"
               ><i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i
@@ -174,7 +174,7 @@ if(isset($_GET["id"])){
           </li>
           <li>
             <a
-              href="https://plus.google.com/share?url=<?php echo urlencode(urlencode("https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"));?>"
+              href="https://plus.google.com/share?url=<?php echo urlencode("https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");?>"
               target="_blank"
               title="Share on Google+"
               ><i class="fab fa-google-plus-square fa-2x" aria-hidden="true"></i
@@ -183,7 +183,7 @@ if(isset($_GET["id"])){
           </li>
           <li>
             <a
-              href="http://www.tumblr.com/share?v=3&u=<?php echo urlencode(urlencode("https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"));?>"
+              href="http://www.tumblr.com/share?v=3&u=<?php echo urlencode("https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");?>"
               target="_blank"
               title="Post to Tumblr"
               ><i class="fab fa-tumblr-square fa-2x" aria-hidden="true"></i
@@ -192,7 +192,7 @@ if(isset($_GET["id"])){
           </li>
           <li>
             <a
-              href="http://pinterest.com/pin/create/button/?url=<?php echo urlencode(urlencode("https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"));?>&description=Found%20this%20article%20on%20spaceBlog%3A"
+              href="http://pinterest.com/pin/create/button/?url=<?php echo urlencode("https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");?>&description=Found%20this%20article%20on%20spaceBlog%3A"
               target="_blank"
               title="Pin it"
               ><i class="fab fa-pinterest-square fa-2x" aria-hidden="true"></i
@@ -201,7 +201,7 @@ if(isset($_GET["id"])){
           </li>
           <li>
             <a
-              href="https://getpocket.com/save?url=<?php echo urlencode(urlencode("https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"));?>&title=spaceBlog%3A%20article"
+              href="https://getpocket.com/save?url=<?php echo urlencode("https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");?>&title=spaceBlog%3A%20article"
               target="_blank"
               title="Add to Pocket"
             >
@@ -211,7 +211,7 @@ if(isset($_GET["id"])){
           </li>
           <li>
             <a
-              href="http://www.reddit.com/submit?url=<?php echo urlencode(urlencode("https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"));?>&title=spaceBlog%3A%20article"
+              href="http://www.reddit.com/submit?url=<?php echo urlencode("https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");?>&title=spaceBlog%3A%20article"
               target="_blank"
               title="Submit to Reddit"
               ><i class="fab fa-reddit-square fa-2x" aria-hidden="true"></i
@@ -220,7 +220,7 @@ if(isset($_GET["id"])){
           </li>
           <li>
             <a
-              href="http://www.linkedin.com/shareArticle?mini=true&url=<?php echo urlencode(urlencode("https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"));?>&title=spaceBlog%3A%20article&summary=Found%20this%20article%20on%20spaceBlog%3A&source=http%3A%2F%2Fhttps%3A%2F%2Fspaceblog.glitch.me"
+              href="http://www.linkedin.com/shareArticle?mini=true&url=<?php echo urlencode("https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");?>&title=spaceBlog%3A%20article&summary=Found%20this%20article%20on%20spaceBlog%3A&source=http%3A%2F%2Fhttps%3A%2F%2Fspaceblog.glitch.me"
               target="_blank"
               title="Share on LinkedIn"
               ><i class="fab fa-linkedin fa-2x" aria-hidden="true"></i
@@ -238,7 +238,7 @@ if(isset($_GET["id"])){
           </li>
           <li>
             <a
-              href="mailto:?subject=spaceBlog%3A%20article&body=Found%20this%20article%20on%20spaceBlog%3A:%20<?php echo urlencode(urlencode("https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"));?>"
+              href="mailto:?subject=spaceBlog%3A%20article&body=Found%20this%20article%20on%20spaceBlog%3A:%20<?php echo urlencode("https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");?>"
               target="_blank"
               title="Send email"
               ><i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i
