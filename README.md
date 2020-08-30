@@ -1,4 +1,5 @@
 # spaceBlog
+```
                          ______ _             
                          | ___ \ |            
  ___ _ __   __ _  ___ ___| |_/ / | ___   __ _ 
@@ -8,7 +9,9 @@
     | |                                  __/ |
     |_|                                 |___/ 
 
+```
+SpaceBlog is a blog-system on LAMP with Bootstrap and jQuery.
 
-SpaceBlog is a blog on LAMP with Bootstrap and jQuery.
 
-_Theme by StartBootstrap_
+
+Theme by (https://startbootstrap.com])[s]
