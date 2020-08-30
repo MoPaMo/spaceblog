@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+<?php
+include("db.php");
+$conn=db();
+  $res1=$conn->query("SELECT * FROM posts ORDER BY created desc;");
+  $res2=$res1->fetch_all(MYSQLI_ASSOC);
+?><!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -97,13 +102,9 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="post-preview">
-            <a href="post.html">
-              <h2 class="post-title">
-                Man must explore, and this is exploration at its greatest
-              </h2>
-              <h3 class="post-subtitle">
-                Problems look mighty small from 150 miles up
-              </h3>
+            <a href="/article/<?php echo hex2bin($res2[0]["id"]);?>">
+              <h2 class="post-title"><?php echo hex2bin($res2[0]["title"]);?></h2>
+              <h3 class="post-subtitle"></h3>
             </a>
             <p class="post-meta">
               Posted by
