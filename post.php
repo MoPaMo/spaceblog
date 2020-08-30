@@ -247,7 +247,9 @@ if(isset($_GET["id"])){
         </ul>
       </div>
     </article>
-
+<button onclick="share()" >
+  <i class="fas fa-share"></i>
+    </button>
     <hr />
 
     <!-- Footer -->
@@ -295,14 +297,15 @@ if(isset($_GET["id"])){
     <script>function share(){
   if (navigator.share) {
   navigator.share({
-    title: '<?php echo ',
-    text: 'Check out web.dev.',
-    url: 'https://web.dev/',
+    title: '<?php echo $res["title"];?>',
+    text: 'I found this cool article on spaceBlog!',
+    url: '<?php echo "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";?>',
   })
     .then(() => console.log('Successful share'))
     .catch((error) => console.log('Error sharing', error));
 }
-}</script>
+}
+    share()</script>
     <script src="/clean-blog.min.js"></script>
   </body>
 </html>
