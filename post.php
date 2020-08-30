@@ -2,10 +2,10 @@
 if(isset($_GET["id"])){
   include("db.php");
   $conn=db();
-  $res1=$conn->query("SELECT * FROM posts");
+  $res1=$conn->query("SELECT * FROM posts WHERE id=".intval($_GET["id"]).";");
   if(count($res1)>0){
     $res2=$res1->fetch_all(MYSQLI_ASSOC);
-    $res= $res2[1];
+    $res= $res2[0];
   }
 }else{
   http_response_code(404);
@@ -127,7 +127,7 @@ if(isset($_GET["id"])){
                 >Posted by
                 <a href="#"><?php echo hex2bin($res["author"]);?> </a>
                 on <?php echo $res["created"];?> </span
-              ><?php if(isset($_GET["id"])){echo $_GET["id"];}?>
+              >
             </div>
           </div>
         </div>
