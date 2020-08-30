@@ -160,6 +160,7 @@ if(isset($_POST["pwd"])&&$_POST["pwd"]==getenv("pass")){
           <p class="copyright text-muted">Copyright &copy; MoPaMo 2020</p>
         </div>
       </div>
+    
     </div>
   </footer>
 
@@ -169,7 +170,21 @@ if(isset($_POST["pwd"])&&$_POST["pwd"]==getenv("pass")){
 
   <!-- Custom scripts for this template -->
   <script src="/clean-blog.min.js"></script>
-
+<script>
+  
+// Must be triggered some kind of "user activation"
+function share(){
+  if (navigator.share) {
+  navigator.share({
+    title: 'web.dev',
+    text: 'Check out web.dev.',
+    url: 'https://web.dev/',
+  })
+    .then(() => console.log('Successful share'))
+    .catch((error) => console.log('Error sharing', error));
+}
+}
+  </script>
 </body>
 
 </html>

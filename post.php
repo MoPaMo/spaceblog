@@ -292,6 +292,17 @@ if(isset($_GET["id"])){
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 
     <!-- Custom scripts for this template -->
+    <script>function share(){
+  if (navigator.share) {
+  navigator.share({
+    title: '<?php echo ',
+    text: 'Check out web.dev.',
+    url: 'https://web.dev/',
+  })
+    .then(() => console.log('Successful share'))
+    .catch((error) => console.log('Error sharing', error));
+}
+}</script>
     <script src="/clean-blog.min.js"></script>
   </body>
 </html>
