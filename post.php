@@ -112,7 +112,7 @@ if(isset($_GET["id"])){
     <!-- Page Header -->
     <header
       class="masthead"
-      style="background-image: url('https://source.unsplash.com/user/nasa')"
+      style="background-image: url('<?php echo hex2bin($res["image"]);?>'), url('https://source.unsplash.com/user/nasa')"
     >
       <div class="overlay"></div>
       <div class="container">
@@ -144,8 +144,7 @@ if(isset($_GET["id"])){
             ?>
 
             <p>
-              Placeholder text by
-              <a href="http://spaceipsum.com/">Space Ipsum</a>. Photographs by 
+               Photos by 
               <a href="https://www.unsplash.com/photos/@nasa/"
                 >NASA @ Unsplash</a
               >.
@@ -153,10 +152,10 @@ if(isset($_GET["id"])){
           </div>
         </div>
 
-        <ul class="share-buttons" data-source="simplesharingbuttons.com">
+        <ul class="share-buttons text-center" data-source="simplesharingbuttons.com">
           <li>
             <a
-              href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(urlencode("https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"));?>&quote=spaceBlog%3A%20article"
+              href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode("https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");?>&quote=spaceBlog%3A%20article"
               target="_blank"
               title="Share on Facebook"
               ><i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i

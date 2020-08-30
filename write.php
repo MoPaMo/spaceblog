@@ -86,8 +86,14 @@ adb()->( "INSERT INTO posts(title, short, content, author) VALUES (\"".bin2hex($
 
     <form action="" method="POST">
       <div class="form-group">
+        <label for="imageinput">Image</label>
+        <input type="text" maxlength="50" class="form-control" id="imageinput" aria-describedby="imagehelp" name="image"  placeholder="Enter Hero Images URL"><small id="imagehelp" class="form-text text-muted">
+        Enter the URL of a CC-BY-* image 
+      </small>
+    </div>
+      <div class="form-group">
         <label for="titleinput">Title</label>
-        <input type="text" maxlength="50" class="form-control" id="titleinput" name="title" aria-describedby="emailHelp" placeholder="Enter Title">
+        <input type="text" maxlength="50" class="form-control" id="titleinput" name="title" placeholder="Enter Title">
     </div>
       <div class="form-group">
         <label for="shortInput">Short Description</label>
