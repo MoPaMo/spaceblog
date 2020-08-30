@@ -244,6 +244,13 @@ if(isset($_GET["id"])){
               ><span class="sr-only">Send email</span></a
             >
           </li>
+          <li>
+            <a
+              title="share using share menu"
+              ><i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i
+              ><span class="sr-only">share using share menu</span></a
+            >
+          </li>
         </ul>
       </div>
     </article>
