@@ -1,6 +1,6 @@
 <?php 
 include("db.php");
-include("Parsedown.php")
+include("Parsedown.php");
 if(isset($_POST["pwd"])&&$_POST["pwd"]==getenv("pass")){
   echo "passed";
   if(isset($_POST["author"])&&$_POST["author"]!=""&& isset($_POST["title"])&&$_POST["title"]!=""&&isset($_POST["content"])&&$_POST["content"]!=""&&isset($_POST["short"])&&$_POST["short"]!=""){
@@ -8,7 +8,8 @@ if(isset($_POST["pwd"])&&$_POST["pwd"]==getenv("pass")){
     $Parsedown = new Parsedown();
     $Parsedown->setSafeMode(true);
     $content=bin2hex($Parsedown->text($_POST["content"]));
-    adb()->query( "INSERT INTO posts(title, short, content, author, image) VALUES (\"".bin2hex($_POST["title"])."\",\"".bin2hex($_POST["short"])."\", \"$content\",\"".bin2hex($_POST["author"])."\", \"$image\");");
+    $q="INSERT INTO posts(title, short, content, author, image) VALUES (\"".bin2hex($_POST["title"])."\",\"".bin2hex($_POST["short"])."\", \"$content\",\"".bin2hex($_POST["author"])."\", \"$image\");";
+    adb()->query($q);
     echo "passed";
     }
   }                        
