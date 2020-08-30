@@ -47,7 +47,7 @@ $conn=db();
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+        <a class="navbar-brand" href="index.html">spaceBlog</a>
         <button
           class="navbar-toggler navbar-toggler-right"
           type="button"
@@ -63,13 +63,13 @@ $conn=db();
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
+              <a class="nav-link" href="/">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="about.html">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="post.html">Sample Post</a>
+              <a class="nav-link" href="write.php">Write a Post</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="contact.html">Contact</a>
@@ -102,62 +102,50 @@ $conn=db();
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="post-preview">
-            <a href="/article/<?php echo hex2bin($res2[0]["id"]);?>">
+            <a href="/article/<?php echo $res2[0]["id"];?>">
               <h2 class="post-title"><?php echo hex2bin($res2[0]["title"]);?></h2>
-              <h3 class="post-subtitle"></h3>
+              <h3 class="post-subtitle"><?php echo hex2bin($res2[0]["short"]);?></h3>
             </a>
             <p class="post-meta">
               Posted by
-              <a href="#">Start Bootstrap</a>
-              on September 24, 2019
+              <a href="/author/<?php echo hex2bin($res2[0]["author"]);?>"><?php echo hex2bin($res2[0]["author"]);?></a>
+              on <?php echo $res2[0]["created"];?>
             </p>
           </div>
           <hr />
           <div class="post-preview">
-            <a href="post.html">
-              <h2 class="post-title">
-                I believe every human has a finite number of heartbeats. I don't
-                intend to waste any of mine.
-              </h2>
+            <a href="/article/<?php echo $res2[1]["id"];?>">
+              <h2 class="post-title"><?php echo hex2bin($res2[1]["title"]);?></h2>
+              <h3 class="post-subtitle"><?php echo hex2bin($res2[1]["short"]);?></h3>
             </a>
             <p class="post-meta">
               Posted by
-              <a href="#">Start Bootstrap</a>
-              on September 18, 2019
+              <a href="/author/<?php echo hex2bin($res2[1]["author"]);?>"><?php echo hex2bin($res2[1]["author"]);?></a>
+              on <?php echo $res2[1]["created"];?>
             </p>
           </div>
           <hr />
           <div class="post-preview">
-            <a href="post.html">
-              <h2 class="post-title">
-                Science has not yet mastered prophecy
-              </h2>
-              <h3 class="post-subtitle">
-                We predict too much for the next year and yet far too little for
-                the next ten.
-              </h3>
+            <a href="/article/<?php echo $res2[2]["id"];?>">
+              <h2 class="post-title"><?php echo hex2bin($res2[2]["title"]);?></h2>
+              <h3 class="post-subtitle"><?php echo hex2bin($res2[2]["short"]);?></h3>
             </a>
             <p class="post-meta">
               Posted by
-              <a href="#">Start Bootstrap</a>
-              on August 24, 2019
+              <a href="/author/<?php echo hex2bin($res2[2]["author"]);?>"><?php echo hex2bin($res2[2]["author"]);?></a>
+              on <?php echo $res2[2]["created"];?>
             </p>
           </div>
           <hr />
           <div class="post-preview">
-            <a href="post.html">
-              <h2 class="post-title">
-                Failure is not an option
-              </h2>
-              <h3 class="post-subtitle">
-                Many say exploration is part of our destiny, but it’s actually
-                our duty to future generations.
-              </h3>
+            <a href="/article/<?php echo $res2[3]["id"];?>">
+              <h2 class="post-title"><?php echo hex2bin($res2[3]["title"]);?></h2>
+              <h3 class="post-subtitle"><?php echo hex2bin($res2[3]["short"]);?></h3>
             </a>
             <p class="post-meta">
               Posted by
-              <a href="#">Start Bootstrap</a>
-              on July 8, 2019
+              <a href="/author/<?php echo hex2bin($res2[3]["author"]);?>"><?php echo hex2bin($res2[3]["author"]);?></a>
+              on <?php echo $res2[3]["created"];?>
             </p>
           </div>
           <hr />
