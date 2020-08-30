@@ -20,10 +20,10 @@ if(isset($_GET["id"])){
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <meta name="description" content="A personal blog" />
-    <meta name="author" content="MoPaMo" />
+    <meta name="description" content="<?php echo hex2bin($res["short"]);?>" />
+    <meta name="author" content="<?php echo hex2bin($res["author"]);?>" />
 
-    <title><?php echo $res["title"];?> -- spaceBlog</title>
+    <title><?php echo hex2bin($res["title"]);?> -- spaceBlog</title>
 
     <!-- Bootstrap core CSS -->
     <link
@@ -119,13 +119,13 @@ if(isset($_GET["id"])){
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="post-heading">
-              <h1><?php echo $res["title"];?> </h1>
+              <h1><?php echo hex2bin($res["title"]);?> </h1>
               <h2 class="subheading">
-                <?php echo $res["title"];?> 
+                <?php echo hex2bin($res["short"]);?> 
               </h2>
               <span class="meta"
                 >Posted by
-                <a href="#"><?php echo $res["author"];?> </a>
+                <a href="#"><?php echo hex2bin($res["author"]);?> </a>
                 on <?php echo $res["created"];?> </span
               ><?php if(isset($_GET["id"])){echo $_GET["id"];}?>
             </div>
@@ -140,7 +140,7 @@ if(isset($_GET["id"])){
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <?php
-            
+            echo hex2bin($res["content"]);
             ?>
 
             <p>
