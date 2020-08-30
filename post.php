@@ -244,19 +244,18 @@ if(isset($_GET["id"])){
               ><span class="sr-only">Send email</span></a
             >
           </li>
-          <li>
+          <li id="share">
             <a
+              onclick="share()"
+              href="#share"
               title="share using share menu"
-              ><i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i
+              ><i class="fas fa-share-square fa-2x" aria-hidden="true"></i
               ><span class="sr-only">share using share menu</span></a
             >
           </li>
         </ul>
       </div>
     </article>
-<button onclick="share()" >
-  <i class="fas fa-share"></i>
-    </button>
     <hr />
 
     <!-- Footer -->
@@ -302,17 +301,17 @@ if(isset($_GET["id"])){
 
     <!-- Custom scripts for this template -->
     <script>function share(){
+  
   if (navigator.share) {
   navigator.share({
     title: '<?php echo $res["title"];?>',
-    text: 'I found this cool article on spaceBlog!',
+    text: 'I found this cool article on spaceBlog: <?php echo $res["title"];?> by <?php echo $res["author"];?>',
     url: '<?php echo "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";?>',
   })
     .then(() => console.log('Successful share'))
-    .catch((error) => console.log('Error sharing', error));
-}
-}
-    share()</script>
+    .catch((error) => alert("The share menu is not available in your browser :("));
+}else{alert("The share menu is not available in your browser :(")}
+}</script>
     <script src="/clean-blog.min.js"></script>
   </body>
 </html>
