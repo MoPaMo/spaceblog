@@ -113,11 +113,11 @@ $conn=db();
           <div class="post-preview">
             <a href="/article/<?php echo $res["id"];?>">
               <h2 class="post-title"><?php echo hex2bin($res["title"]);?></h2>
-              <h3 class="post-subtitle"><?php echo hex2bin($res2["short"]);?></h3>
+              <h3 class="post-subtitle"><?php echo hex2bin($res["short"]);?></h3>
             </a>
             <p class="post-meta">
               Posted by
-              <a href="/author/<?php echo hex2bin($res["author"]);?>"><?php echo hex2bin($res2["author"]);?></a>
+              <a href="/author/<?php echo hex2bin($res["author"]);?>"><?php echo hex2bin($res["author"]);?></a>
               on <?php echo $res["created"];?>
             </p>
           </div>
