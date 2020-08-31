@@ -6,7 +6,11 @@ if(isset($_GET["id"])){
   $res2=$res1->fetch_all(MYSQLI_ASSOC);
   if(count($res2)>0){
     $res= $res2[0];
-  }
+  }else{
+  http_response_code(404);
+  include('404.html'); // provide your own HTML for the error page
+  die();
+}
 }else{
   http_response_code(404);
   include('404.html'); // provide your own HTML for the error page
