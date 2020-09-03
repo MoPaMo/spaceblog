@@ -149,14 +149,14 @@ if(isset($_GET["id"])){
 
             <p>
                Photos by 
-              <a href="https://www.unsplash.com/photos/@nasa/"
+              <a class="" href="https://www.unsplash.com/photos/@nasa/"
                 >NASA @ Unsplash</a
               >.
             </p>
           </div>
         </div>
 
-        <ul class="share-buttons text-center" data-source="simplesharingbuttons.com">
+        <ul class="share-buttons text-center shareiconbar" data-source="simplesharingbuttons.com">
           <li>
             <a
               href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode("https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");?>&quote=spaceBlog%3A%20article"
@@ -250,6 +250,15 @@ if(isset($_GET["id"])){
           </li>
           <li id="share">
             <a
+              
+              href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=<?php echo urlencode("https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");?>"
+              title="share using share menu"
+              ><i class="fas fa-qrcode fa-2x" aria-hidden="true"></i
+              ><span class="sr-only">share using share menu</span></a
+            >
+          </li>
+          <li id="share">
+            <a
               onclick="share()"
               href="#share"
               title="share using share menu"
@@ -313,7 +322,7 @@ if(isset($_GET["id"])){
     url: '<?php echo "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";?>',
   })
     .then(() => console.log('Successful share'))
-    .catch((error) => alert("The share menu is not available in your browser :("));
+    .catch((error) => console.log("Share menu not working"));
 }else{alert("The share menu is not available in your browser :(")}
 }</script>
     <script src="/clean-blog.min.js"></script>
