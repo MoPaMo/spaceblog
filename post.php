@@ -27,7 +27,7 @@ if(isset($_GET["id"])){
     <meta name="description" content="<?php echo hex2bin($res["short"]);?>" />
     <meta name="author" content="<?php echo hex2bin($res["author"]);?>" />
 
-    <title><?php echo hex2bin($res["title"]);?> -- spaceBlog</title>
+    <title><?php echo hex2bin($res["title"]);?> | spaceBlog</title>
 
     <!-- Bootstrap core CSS -->
     <link
@@ -155,8 +155,8 @@ if(isset($_GET["id"])){
             </p>
           </div>
         </div>
-
-        <ul class="share-buttons text-center shareiconbar" data-source="simplesharingbuttons.com">
+<hr/>
+        <ul class="share-buttons text-center " data-source="simplesharingbuttons.com">
           <li>
             <a
               href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode("https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");?>&quote=spaceBlog%3A%20article"
@@ -254,7 +254,7 @@ if(isset($_GET["id"])){
               href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=<?php echo urlencode("https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");?>"
               title="share using share menu"
               ><i class="fas fa-qrcode fa-2x" aria-hidden="true"></i
-              ><span class="sr-only">share using share menu</span></a
+              ><span class="sr-only">Show URL as QR-code (Powered by goqr.com)</span></a
             >
           </li>
           <li id="share">

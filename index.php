@@ -102,7 +102,7 @@ $conn=db();
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="post-preview">
-            <a href="/article/<?php echo $res2[0]["id"];?>">
+            <a href="/article/<?php echo $res2[0]["id"];?>/<?php echo hex2bin($res2[0]["title"]);?>">
               <h2 class="post-title"><?php echo hex2bin($res2[0]["title"]);?></h2>
               <h3 class="post-subtitle"><?php echo hex2bin($res2[0]["short"]);?></h3>
             </a>
@@ -114,7 +114,7 @@ $conn=db();
           </div>
           <hr />
           <div class="post-preview">
-            <a href="/article/<?php echo $res2[1]["id"];?>">
+            <a href="/article/<?php echo $res2[1]["id"];?>/<?php echo hex2bin($res2[1]["title"]);?>">
               <h2 class="post-title"><?php echo hex2bin($res2[1]["title"]);?></h2>
               <h3 class="post-subtitle"><?php echo hex2bin($res2[1]["short"]);?></h3>
             </a>
@@ -126,7 +126,7 @@ $conn=db();
           </div>
           <hr />
           <div class="post-preview">
-            <a href="/article/<?php echo $res2[2]["id"];?>">
+            <a href="/article/<?php echo $res2[2]["id"];?>/<?php echo hex2bin($res2[2]["title"]);?>">
               <h2 class="post-title"><?php echo hex2bin($res2[2]["title"]);?></h2>
               <h3 class="post-subtitle"><?php echo hex2bin($res2[2]["short"]);?></h3>
             </a>
@@ -138,7 +138,7 @@ $conn=db();
           </div>
           <hr />
           <div class="post-preview">
-            <a href="/article/<?php echo $res2[3]["id"];?>">
+            <a href="/article/<?php echo $res2[3]["id"];?>/<?php echo hex2bin($res2[3]["title"]);?>">
               <h2 class="post-title"><?php echo hex2bin($res2[3]["title"]);?></h2>
               <h3 class="post-subtitle"><?php echo hex2bin($res2[3]["short"]);?></h3>
             </a>
