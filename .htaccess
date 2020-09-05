@@ -3,3 +3,5 @@ RewriteEngine On
 RewriteRule    ^article/([0-9]+)$  post.php?id=$1    [NC,L]    # Rewrite all /article/ to post.php
 RewriteRule    ^article/([0-9]+)/.*$  post.php?id=$1    [NC,L]    # Rewrite all /article/ to post.php
 RewriteRule    ^article/$  post.php    [NC,L]    #if no id provided, rewrite without get attr
+RewriteCond %{HTTP_HOST} ^sub.domain.com
+RewriteRule ^(.*)$ /subdomains/sub/$1 [L,NC,QSA]
