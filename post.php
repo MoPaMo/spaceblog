@@ -241,6 +241,15 @@ if(isset($_GET["id"])){
           </li>
           <li>
             <a
+              href="https://api.whatsapp.com/send?text=<?php echo urlencode("http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");?>%20spaceBlog%3A%20%20Found%20this%20article%20on%20spaceBlog%3A"
+              target="_blank"
+              title="Share via WhatsApp"
+              ><i class="fab fa-whatsapp-square fa-2x" aria-hidden="true"></i
+              ><span class="sr-only">Share via WhatsApp</span></a
+            >
+          </li>
+          <li>
+            <a
               href="mailto:?subject=spaceBlog%3A%20article&body=Found%20this%20article%20on%20spaceBlog%3A:%20<?php echo urlencode("https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");?>"
               target="_blank"
               title="Send email"
