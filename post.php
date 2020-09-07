@@ -232,7 +232,7 @@ if(isset($_GET["id"])){
           </li>
           <li>
             <a
-              href="http://wordpress.com/press-this.php?u=<?php echo urlencode("http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");?>&quote=spaceBlog%3A%20article&s=Found%20this%20article%20on%20spaceBlog%3A"
+              href="http://wordpress.com/press-this.php?u=<?php echo urlencode("https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");?>&quote=spaceBlog%3A%20article&s=Found%20this%20article%20on%20spaceBlog%3A"
               target="_blank"
               title="Publish on WordPress"
               ><i class="fab fa-wordpress fa-2x" aria-hidden="true"></i
@@ -241,7 +241,7 @@ if(isset($_GET["id"])){
           </li>
           <li>
             <a
-              href="https://api.whatsapp.com/send?text=<?php echo urlencode("http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");?>%20spaceBlog%3A%20%20Found%20this%20article%20on%20spaceBlog%3A"
+              href="https://api.whatsapp.com/send?text=<?php echo urlencode("https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");?>%20spaceBlog%3A%20%20Found%20this%20article%20on%20spaceBlog%3A%20<?php echo urlencode(hex2bin($res["title"]));?> "
               target="_blank"
               title="Share via WhatsApp"
               ><i class="fab fa-whatsapp-square fa-2x" aria-hidden="true"></i
@@ -261,7 +261,7 @@ if(isset($_GET["id"])){
             <a
               
               href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=<?php echo urlencode("https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");?>"
-              title="share using share menu"
+              title="Show URL as QR-code (Powered by goqr.com)"
               ><i class="fas fa-qrcode fa-2x" aria-hidden="true"></i
               ><span class="sr-only">Show URL as QR-code (Powered by goqr.com)</span></a
             >
