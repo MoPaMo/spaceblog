@@ -1,3 +1,4 @@
+Header set Access-Control-Allow-Origin "https://my.CLIENT.domain"
 ErrorDocument 404 /404.html
 RewriteEngine On
 RewriteRule    ^article/([0-9]+)$  post.php?id=$1    [NC,L]    # Rewrite all /article/ to post.php
