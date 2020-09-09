@@ -95,17 +95,22 @@
     <!-- Main Content -->
     <div class="container">
       <div class="row">
-        <form class="form-inline my-2 my-lg-0">
-          <input
-            class="form-control mr-sm-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-            Search
-          </button>
-        </form>
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="input-group mb-3">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Search…"
+              aria-label="Search"
+              aria-describedby="basic-addon2" id="input"
+            />
+            <div class="input-group-append">
+              <span class="input-group-text" id="basic-addon2"
+                ><span class="fas fa-search"></span></span
+              >
+            </div>
+          </div>
+        </div>
       </div>
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto" id="output">
@@ -154,7 +159,7 @@
     </footer>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 
     <!-- Custom scripts for this template -->
@@ -162,7 +167,7 @@
     <script>
       $("#input").keyup(function() {
         $.ajax({
-          url: "/api/search.php",
+          url: "/api/search.php?name="+$("#input").value,
           success: function(result) {
             $("#output").html(result);
           }
