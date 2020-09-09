@@ -2,7 +2,7 @@
 if(isset($_GET["name"])){
 include("../db.php");
 $conn=db();
-  $res1=$conn->query("SELECT * FROM posts WHERE  title LIKE \"%".bin2hex($_GET["name"])."%\" ORDER BY created desc;");
+  $res1=$conn->query("SELECT * FROM posts WHERE  title LIKE \"".bin2hex($_GET["name"])."%\" ORDER BY created desc;");
   $res2=$res1->fetch_all(MYSQLI_ASSOC);
   if(count($res2)>0){
       foreach($res2 as $res){?>
