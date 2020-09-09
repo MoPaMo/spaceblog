@@ -3,6 +3,7 @@ include("db.php");
 $conn=db();
   $res1=$conn->query("SELECT * FROM posts ORDER BY created desc;");
   $res2=$res1->fetch_all(MYSQLI_ASSOC);
+
 ?><!DOCTYPE html>
 <html lang="en">
   <head>

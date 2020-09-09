@@ -33,17 +33,24 @@
       rel="stylesheet"
       type="text/css"
     />
-<style>
-  @keyframes moving_c{
-    from{left:0vw;}
-    to{left:100vw}
-  }
-  .moving_c{
-      animation-name: moving_c;
-    postition:relative;
-  animation-duration: 4s;
-  animation-iteration-count: infinite;
-  }
+    <style>
+      @keyframes moving_c {
+        from {
+          font-size:inherit
+        }
+        to {
+          font-size:2.5vw
+        }
+      }
+      .moving_c {
+        animation-name: moving_c;
+
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        position: relative;
+        animation-direction: alternate;
+        left: 0px;
+      }
     </style>
     <!-- Custom styles for this template -->
     <link href="clean-blog.min.css" rel="stylesheet" />
@@ -164,7 +171,9 @@
                 </a>
               </li>
             </ul>
-            <p class="copyright text-muted">Copyright &copy; MoPaMo 2020</p>
+            <p class="copyright text-muted">
+              Copyright &copy; MoPaMo 2020
+            </p>
           </div>
         </div>
       </div>
@@ -177,15 +186,17 @@
     <!-- Custom scripts for this template -->
     <script src="clean-blog.min.js"></script>
     <script>
-            $("#input").keyup(function() {
-              $("#output").html("<i class=\"fas fa-satellite-dish moving_c\"></i> Contacting Mars station");
-              $.ajax({
-                url: "/api/search.php?name="+$("#input").val(),
-                success: function(result) {
-                  $("#output").html(result);
-                }
-              });
-            });
+      $("#input").keyup(function() {
+        $("#output").html(
+          '<i class="fas fa-satellite-dish moving_c"></i> Contacting Mars station'
+        );
+        $.ajax({
+          url: "/api/search.php?name=" + $("#input").val(),
+          success: function(result) {
+            $("#output").html(result);
+          }
+        });
+      });
     </script>
   </body>
 </html>
