@@ -152,7 +152,7 @@ if(isset($_GET["id"])){
               <a class="" href="https://www.unsplash.com/photos/@nasa/"
                 >NASA @ Unsplash</a
               >.<?php }
-              else echo "<a href=\"$res["image"]\"></a>";?>
+              else echo "<a href=\"".hex2bin($res["image"])."\">Image source</a>";?>
             </p>
           </div>
         </div>
