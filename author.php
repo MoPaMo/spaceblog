@@ -55,7 +55,7 @@ $conn=db();
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand" href="index.html">spaceBlog</a>
+        <a class="navbar-brand" href="/index.php">spaceBlog</a>
         <button
           class="navbar-toggler navbar-toggler-right"
           type="button"

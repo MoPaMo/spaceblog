@@ -51,7 +51,7 @@ function en2ar($a){
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand" href="index.html">spaceBlog</a>
+        <a class="navbar-brand" href="/index.php">spaceBlog</a>
         <button
           class="navbar-toggler navbar-toggler-right"
           type="button"
@@ -76,7 +76,7 @@ function en2ar($a){
               <a class="nav-link" href="write.php">Write a Post</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
+              <a class="nav-link" href="search.html"><span class="fas fa-search"></span></a>
             </li>
           </ul>
         </div>
