@@ -147,11 +147,12 @@ if(isset($_GET["id"])){
             echo hex2bin($res["content"]);
             ?>
 
-            <p>
+            <p><?php if($res["image"]==null){ ?>
                Photos by 
               <a class="" href="https://www.unsplash.com/photos/@nasa/"
                 >NASA @ Unsplash</a
-              >.
+              >.<?php }
+              else echo "<a href=\"$res["image"]\"></a>";?>
             </p>
           </div>
         </div>
