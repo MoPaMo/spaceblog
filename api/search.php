@@ -4,8 +4,8 @@ include("../db.php");
 $conn=db();
   $res1=$conn->query("SELECT * FROM posts WHERE  title LIKE \"%".bin2hex($_GET["name"])."%\" ORDER BY created desc;");
   $res2=$res1->fetch_all(MYSQLI_ASSOC);
-  if(count($res2>0)){
-      foreach($res2 as $res){ ?>
+  if(count($res2)>0){
+      foreach($res2 as $res){?>
           <div class="post-preview">
             <a href="/article/<?php echo $res["id"];?>">
               <h2 class="post-title"><?php echo hex2bin($res["title"]);?></h2>
@@ -17,4 +17,6 @@ $conn=db();
               on <?php echo $res["created"];?>
             </p>
           </div>
-          <hr /><?php }else{echo "<img src="https://cdn.glitch.com/637778d7-facd-4553-820b-773fd6182020%2Fundraw_empty_xct9.svg?v=1599632299973">"}}} ?>
+          <hr /><?php }}else{echo "<img src=\"https://cdn.glitch.com/637778d7-facd-4553-820b-773fd6182020%2Fundraw_empty_xct9.svg?v=1599632299973\">";}
+  /**/
+} ?>

@@ -1,5 +1,4 @@
-
-?><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -10,7 +9,7 @@
     <meta name="description" content="A personal blog" />
     <meta name="author" content="MoPaMo" />
 
-    <title>author <?php echo $_GET["name"];?>| spaceBlog</title>
+    <title>Search | spaceBlog</title>
 
     <!-- Bootstrap core CSS -->
     <link
@@ -96,27 +95,21 @@
     <!-- Main Content -->
     <div class="container">
       <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <?php foreach($res2 as $res){?>
-          <div class="post-preview">
-            <a href="/article/<?php echo $res["id"];?>">
-              <h2 class="post-title"><?php echo hex2bin($res["title"]);?></h2>
-              <h3 class="post-subtitle"><?php echo hex2bin($res["short"]);?></h3>
-            </a>
-            <p class="post-meta">
-              Posted by
-              <a href="/author/<?php echo hex2bin($res["author"]);?>"><?php echo hex2bin($res["author"]);?></a>
-              on <?php echo $res["created"];?>
-            </p>
-          </div>
-          <hr /><?php } ?>
-          
+        <form class="form-inline my-2 my-lg-0">
+          <input
+            class="form-control mr-sm-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+            Search
+          </button>
+        </form>
+      </div>
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto" id="output">
           <!-- Pager -->
-          <div class="clearfix">
-            <a class="btn btn-primary float-right" href="#"
-              >Older Posts &rarr;</a
-            >
-          </div>
         </div>
       </div>
     </div>
@@ -166,6 +159,15 @@
 
     <!-- Custom scripts for this template -->
     <script src="clean-blog.min.js"></script>
-
+    <script>
+      $("#input").keyup(function() {
+        $.ajax({
+          url: "/api/search.php",
+          success: function(result) {
+            $("#output").html(result);
+          }
+        });
+      });
+    </script>
   </body>
 </html>
