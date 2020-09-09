@@ -102,12 +102,13 @@
               class="form-control"
               placeholder="Search…"
               aria-label="Search"
-              aria-describedby="basic-addon2" id="input"
+              aria-describedby="basic-addon2"
+              id="input"
             />
             <div class="input-group-append">
               <span class="input-group-text" id="basic-addon2"
-                ><span class="fas fa-search"></span></span
-              >
+                ><span class="fas fa-search"></span
+              ></span>
             </div>
           </div>
         </div>
@@ -165,14 +166,15 @@
     <!-- Custom scripts for this template -->
     <script src="clean-blog.min.js"></script>
     <script>
-      $("#input").keyup(function() {
-        $.ajax({
-          url: "/api/search.php?name="+$("#input").value,
-          success: function(result) {
-            $("#output").html(result);
-          }
-        });
-      });
+            $("#input").keyup(function() {
+              $("#output").html("<i class=\"fas fa-satellite-dish\"></i> Contacting Mars station");
+              $.ajax({
+                url: "/api/search.php?name="+$("#input").value,
+                success: function(result) {
+                  $("#output").html(result);
+                }
+              });
+            });
     </script>
   </body>
 </html>

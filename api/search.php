@@ -2,7 +2,7 @@
 if(isset($_GET["name"])){
 include("../db.php");
 $conn=db();
-  $res1=$conn->query("SELECT * FROM posts WHERE  title LIKE \"".bin2hex($_GET["name"])."%\" ORDER BY created desc;");
+  $res1=$conn->query("SELECT * FROM posts WHERE  title LIKE \"%".bin2hex($_GET["name"])."%\" ORDER BY created desc;");
   $res2=$res1->fetch_all(MYSQLI_ASSOC);
   if(count($res2)>0){
       foreach($res2 as $res){?>
@@ -17,6 +17,6 @@ $conn=db();
               on <?php echo $res["created"];?>
             </p>
           </div>
-          <hr /><?php }}else{echo "<img src=\"https://cdn.glitch.com/637778d7-facd-4553-820b-773fd6182020%2Fundraw_empty_xct9.svg?v=1599632299973\">";}
+          <hr /><?php }}else{echo "<img style=\"max-width:50vw\" src=\"https://cdn.glitch.com/637778d7-facd-4553-820b-773fd6182020%2Fundraw_empty_xct9.svg?v=1599632299973\"> <h2>Nothing found</h2><small>Search is case insensitive!</small>";}
   /**/
 } ?>
