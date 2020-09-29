@@ -1,17 +1,26 @@
 <?php
 if(isset($_GET["name"])){
-  
-
 include("db.php");
-$conn=db();
-  $res1=$conn->query("SELECT * FROM posts WHERE  author=\"".bin2hex($_GET["name"])."\" ORDER BY created desc;");
-  $res2=$res1->fetch_all(MYSQLI_ASSOC);
-  }else{
-  http_response_code(404);
-  include('404.html'); // provide your own HTML for the error page
-  die();
+/*$conn=db();
+  $res1=$conn->query("");
+  $res2=$res1->fetch_all(MYSQLI_ASSOC);*/
+  $stmt = db()->prepare("SELECT * FROM posts WHERE author=? ORDER BY created;");
+   $stmt->bind_param("s", $title);
+    $title = $_GET["name"];
+$stmt->execute();
+  $result = $stmt->get_result();
+while ($data = $result->fetch_assoc())
+{
+    $statistic[] = $data;
 }
-?><!DOCTYPE html>
+
+// Proof that it's working
+
+$res2=$statistic;
+  #echo $statistic[0]["author"];
+  if(count($res2)>0){}else{include("404.html"); die();}
+  /**/
+}else {include("404.html"); die();} ?><!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -109,7 +118,7 @@ $conn=db();
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-          <?php foreach($res2 as $res){?>
+          <?php if(count($res2)){foreach($res2 as $res){?>
           <div class="post-preview">
             <a href="/article/<?php echo $res["id"];?>">
               <h2 class="post-title"><?php echo hex2bin($res["title"]);?></h2>
@@ -121,7 +130,7 @@ $conn=db();
               on <?php echo $res["created"];?>
             </p>
           </div>
-          <hr /><?php } ?>
+          <hr /><?php } }?>
           
           <!-- Pager -->
           <div class="clearfix">
