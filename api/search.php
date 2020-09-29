@@ -4,24 +4,31 @@ include("../db.php");
 /*$conn=db();
   $res1=$conn->query("");
   $res2=$res1->fetch_all(MYSQLI_ASSOC);*/
-  $stmt = db()->prepare("SELECT * FROM posts ;");echo "hi";
+  $stmt = db()->prepare("SELECT * FROM posts WHERE title LIKE "" ;");
    $stmt->bind_param("");
     /*$title = $_GET["name"];
   $short=$_GET["name"];*/
 $stmt->execute();
-  $result = $stmt->get_result(); // get the mysqli result
-$res2 = $result->fetch_assoc(); // fetch data   
-  print_r($res2);
+  $result = $stmt->get_result();
+while ($data = $result->fetch_assoc())
+{
+    $statistic[] = $data;
+}
+
+// Proof that it's working
+
+$res2=$statistic;
+  #echo $statistic[0]["author"];
   if(count($res2)>0){
       foreach($res2 as $res){?>
           <div class="post-preview">
             <a href="/article/<?php echo $res["id"];?>">
-              <h2 class="post-title"><?php echo hex2bin($res["title"]);?></h2>
-              <h3 class="post-subtitle"><?php echo hex2bin($res["short"]);?></h3>
+              <h2 class="post-title"><?php echo $res["title"];?></h2>
+              <h3 class="post-subtitle"><?php echo $res["short"];?></h3>
             </a>
             <p class="post-meta">
               Posted by
-              <a href="/author/<?php echo hex2bin($res["author"]);?>"><?php echo hex2bin($res["author"]);?></a>
+              <a href="/author/<?php echo $res["author"];?>"><?php echo $res["author"];?></a>
               on <?php echo $res["created"];?>
             </p>
           </div>
