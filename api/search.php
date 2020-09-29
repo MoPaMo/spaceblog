@@ -4,10 +4,10 @@ include("../db.php");
 /*$conn=db();
   $res1=$conn->query("");
   $res2=$res1->fetch_all(MYSQLI_ASSOC);*/
-  $stmt = db()->prepare("SELECT * FROM posts WHERE title LIKE CONCAT('%',?,'%') ;");
-   $stmt->bind_param("s", $title);
-    $title = $_GET["name"];/*
-  $short=$_GET["name"];*/
+  $stmt = db()->prepare("SELECT * FROM posts WHERE title LIKE CONCAT('%',?,'%') OR short LIKE CONCAT('%',?,'%') ORDER BY created;");
+   $stmt->bind_param("ss", $title, $short);
+    $title = $_GET["name"];
+  $short=$_GET["name"];
 $stmt->execute();
   $result = $stmt->get_result();
 while ($data = $result->fetch_assoc())
