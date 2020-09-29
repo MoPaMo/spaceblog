@@ -106,49 +106,49 @@ function en2ar($a){
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="post-preview">
-            <a href="/article/<?php echo $res2[0]["id"];?>/<?php echo en2ar(hex2bin($res2[0]["title"]));?>">
-              <h2 class="post-title"><?php echo hex2bin($res2[0]["title"]);?></h2>
-              <h3 class="post-subtitle"><?php echo hex2bin($res2[0]["short"]);?></h3>
+            <a href="/article/<?php echo $res2[0]["id"];?>/<?php echo en2ar($res2[0]["title"]);?>">
+              <h2 class="post-title"><?php echo $res2[0]["title"];?></h2>
+              <h3 class="post-subtitle"><?php echo $res2[0]["short"];?></h3>
             </a>
             <p class="post-meta">
               Posted by
-              <a href="/author/<?php echo hex2bin($res2[0]["author"]);?>"><?php echo hex2bin($res2[0]["author"]);?></a>
+              <a href="/author/<?php echo $res2[0]["author"];?>"><?php echo $res2[0]["author"];?></a>
               on <?php echo $res2[0]["created"];?>
             </p>
           </div>
           <hr />
           <div class="post-preview">
-            <a href="/article/<?php echo $res2[1]["id"];?>/<?php echo en2ar(hex2bin($res2[1]["title"]));?>">
-              <h2 class="post-title"><?php echo hex2bin($res2[1]["title"]);?></h2>
-              <h3 class="post-subtitle"><?php echo hex2bin($res2[1]["short"]);?></h3>
+            <a href="/article/<?php echo $res2[1]["id"];?>/<?php echo en2ar($res2[1]["title"]);?>">
+              <h2 class="post-title"><?php echo $res2[1]["title"];?></h2>
+              <h3 class="post-subtitle"><?php echo $res2[1]["short"];?></h3>
             </a>
             <p class="post-meta">
               Posted by
-              <a href="/author/<?php echo hex2bin($res2[1]["author"]);?>"><?php echo hex2bin($res2[1]["author"]);?></a>
+              <a href="/author/<?php echo $res2[1]["author"];?>"><?php echo $res2[1]["author"];?></a>
               on <?php echo $res2[1]["created"];?>
             </p>
           </div>
           <hr />
           <div class="post-preview">
-            <a href="/article/<?php echo $res2[2]["id"];?>/<?php echo en2ar(hex2bin($res2[2]["title"]));?>">
-              <h2 class="post-title"><?php echo hex2bin($res2[2]["title"]);?></h2>
-              <h3 class="post-subtitle"><?php echo hex2bin($res2[2]["short"]);?></h3>
+            <a href="/article/<?php echo $res2[2]["id"];?>/<?php echo en2ar($res2[2]["title"]);?>">
+              <h2 class="post-title"><?php echo $res2[2]["title"];?></h2>
+              <h3 class="post-subtitle"><?php echo $res2[2]["short"];?></h3>
             </a>
             <p class="post-meta">
               Posted by
-              <a href="/author/<?php echo hex2bin($res2[2]["author"]);?>"><?php echo hex2bin($res2[2]["author"]);?></a>
+              <a href="/author/<?php echo $res2[2]["author"];?>"><?php echo $res2[2]["author"];?></a>
               on <?php echo $res2[2]["created"];?>
             </p>
           </div>
           <hr />
           <div class="post-preview">
-            <a href="/article/<?php echo $res2[3]["id"];?>/<?php echo en2ar(hex2bin($res2[3]["title"]));?>">
-              <h2 class="post-title"><?php echo hex2bin($res2[3]["title"]);?></h2>
-              <h3 class="post-subtitle"><?php echo hex2bin($res2[3]["short"]);?></h3>
+            <a href="/article/<?php echo $res2[3]["id"];?>/<?php echo en2ar($res2[3]["title"]);?>">
+              <h2 class="post-title"><?php echo $res2[3]["title"];?></h2>
+              <h3 class="post-subtitle"><?php echo $res2[3]["short"];?></h3>
             </a>
             <p class="post-meta">
               Posted by
-              <a href="/author/<?php echo hex2bin($res2[3]["author"]);?>"><?php echo hex2bin($res2[3]["author"]);?></a>
+              <a href="/author/<?php echo $res2[3]["author"];?>"><?php echo $res2[3]["author"];?></a>
               on <?php echo $res2[3]["created"];?>
             </p>
           </div>

@@ -24,10 +24,10 @@ if(isset($_GET["id"])){
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <meta name="description" content="<?php echo hex2bin($res["short"]);?>" />
-    <meta name="author" content="<?php echo hex2bin($res["author"]);?>" />
+    <meta name="description" content="<?php echo $res["short"];?>" />
+    <meta name="author" content="<?php echo $res["author"];?>" />
 
-    <title><?php echo hex2bin($res["title"]);?> | spaceBlog</title>
+    <title><?php echo $res["title"];?> | spaceBlog</title>
 
     <!-- Bootstrap core CSS -->
     <link
@@ -116,20 +116,20 @@ if(isset($_GET["id"])){
     <!-- Page Header -->
     <header
       class="masthead"
-      style="background-image: url('<?php echo hex2bin($res["image"]);?>'), url('https://source.unsplash.com/user/nasa')"
+      style="background-image: url('<?php echo $res["image"];?>'), url('https://source.unsplash.com/user/nasa')"
     >
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="post-heading">
-              <h1><?php echo hex2bin($res["title"]);?> </h1>
+              <h1><?php echo $res["title"];?> </h1>
               <h2 class="subheading">
-                <?php echo hex2bin($res["short"]);?> 
+                <?php echo $res["short"];?> 
               </h2>
               <span class="meta"
                 >Posted by
-                <a href="#"><?php echo hex2bin($res["author"]);?> </a>
+                <a href="#"><?php echo $res["author"];?> </a>
                 on <?php echo $res["created"];?> </span
               >
             </div>
@@ -144,7 +144,7 @@ if(isset($_GET["id"])){
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <?php
-            echo hex2bin($res["content"]);
+            echo $res["content"];
             ?>
 
             <p><?php if($res["image"]==null){ ?>
@@ -152,7 +152,7 @@ if(isset($_GET["id"])){
               <a class="" href="https://www.unsplash.com/photos/@nasa/"
                 >NASA @ Unsplash</a
               >.<?php }
-              else echo "<a href=\"".hex2bin($res["image"])."\">Image source</a>";?>
+              else echo "<a href=\"".$res["image"]."\">Image source</a>";?>
             </p>
           </div>
         </div>
@@ -242,7 +242,7 @@ if(isset($_GET["id"])){
           </li>
           <li>
             <a
-              href="https://api.whatsapp.com/send?text=<?php echo urlencode("https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");?>%20spaceBlog%3A%20%20Found%20this%20article%20on%20spaceBlog%3A%20<?php echo urlencode(hex2bin($res["title"]));?> "
+              href="https://api.whatsapp.com/send?text=<?php echo urlencode("https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");?>%20spaceBlog%3A%20%20Found%20this%20article%20on%20spaceBlog%3A%20<?php echo urlencode($res["title"]);?> "
               target="_blank"
               title="Share via WhatsApp"
               ><i class="fab fa-whatsapp-square fa-2x" aria-hidden="true"></i
