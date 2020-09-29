@@ -7,19 +7,14 @@ if(isset($_POST["pwd"])&&$_POST["pwd"]==getenv("pass")){
     if(!isset($_POST["image"])) {$image=bin2hex("");} else {$image=bin2hex($_POST["image"]);}
     $Parsedown = new Parsedown();
     $Parsedown->setSafeMode(true);
-    $content=bin2hex($Parsedown->text($_POST["content"]));
-    $q="INSERT INTO posts(title, short, content, author, image) VALUES (\"".bin2hex($_POST["title"])."\",\"".bin2hex($_POST["short"])."\", \"$content\",\"".bin2hex($_POST["author"])."\", \"$image\");";
-    adb()->query($q);
-   /* $stmt = $conn->prepare("INSERT INTO MyGuests (firstname, lastname, email) VALUES (?, ?, ?)");
-   INSERT INTO posts(title, short, content, author, image) VALUES (?,?,?,\"".bin2hex($_POST["author"])."\", \"$image\");";
-
-    $stmt->bind_param("sss", $firstname, $lastname, $email);
-
-    // set parameters and execute
-    $firstname = "John";
-$lastname = "Doe";
-$email = "john@example.com";
-$stmt->execute();*/
+    $stmt = adb()->prepare("INSERT INTO posts(title, short, content, author, image) VALUES (?,?,?,?,?);");
+    $stmt->bind_param("sssss", $title, $short, $content, $author, $image);
+    $title = $_POST["title"];
+    $short = $_POST["short"];
+    $content = $Parsedown->text($_POST["content"]);
+    $author = $_POST["author"];
+    $image = $_POST["image"];
+$stmt->execute();
     header("Location: /");
     }
   }                        
