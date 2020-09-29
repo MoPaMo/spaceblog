@@ -10,6 +10,16 @@ if(isset($_POST["pwd"])&&$_POST["pwd"]==getenv("pass")){
     $content=bin2hex($Parsedown->text($_POST["content"]));
     $q="INSERT INTO posts(title, short, content, author, image) VALUES (\"".bin2hex($_POST["title"])."\",\"".bin2hex($_POST["short"])."\", \"$content\",\"".bin2hex($_POST["author"])."\", \"$image\");";
     adb()->query($q);
+   /* $stmt = $conn->prepare("INSERT INTO MyGuests (firstname, lastname, email) VALUES (?, ?, ?)");
+   INSERT INTO posts(title, short, content, author, image) VALUES (?,?,?,\"".bin2hex($_POST["author"])."\", \"$image\");";
+
+    $stmt->bind_param("sss", $firstname, $lastname, $email);
+
+    // set parameters and execute
+    $firstname = "John";
+$lastname = "Doe";
+$email = "john@example.com";
+$stmt->execute();*/
     header("Location: /");
     }
   }                        
