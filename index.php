@@ -113,7 +113,7 @@ function en2ar($a){
             <p class="post-meta">
               Posted by
               <a href="/author/<?php echo $res2[0]["author"];?>"><?php echo $res2[0]["author"];?></a>
-              on <?php echo $res2[0]["created"];?>
+              on <?php echo date('M d Y', strtotime($res2[0]["created"]));?>
             </p>
           </div>
           <hr />
@@ -125,7 +125,7 @@ function en2ar($a){
             <p class="post-meta">
               Posted by
               <a href="/author/<?php echo $res2[1]["author"];?>"><?php echo $res2[1]["author"];?></a>
-              on <?php echo $res2[1]["created"];?>
+              on <?php echo date('M d Y', strtotime($res2[1]["created"]));?>
             </p>
           </div>
           <hr />
@@ -137,7 +137,7 @@ function en2ar($a){
             <p class="post-meta">
               Posted by
               <a href="/author/<?php echo $res2[2]["author"];?>"><?php echo $res2[2]["author"];?></a>
-              on <?php echo $res2[2]["created"];?>
+              on <?php echo date('M d Y', strtotime($res2[2]["created"]));?>
             </p>
           </div>
           <hr />
@@ -149,7 +149,7 @@ function en2ar($a){
             <p class="post-meta">
               Posted by
               <a href="/author/<?php echo $res2[3]["author"];?>"><?php echo $res2[3]["author"];?></a>
-              on <?php echo $res2[3]["created"];?>
+              on <?php echo date('M d Y', strtotime($res2[3]["created"]));?>
             </p>
           </div>
           <hr />

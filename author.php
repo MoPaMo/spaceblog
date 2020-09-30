@@ -18,7 +18,7 @@ while ($data = $result->fetch_assoc())
 
 $res2=$statistic;
   #echo $statistic[0]["author"];
-  if(count($res2)>0){}else{include("404.html"); die();}
+  if(count($res2)>0){print_r($res2);}else{include("404.html"); die();}
   /**/
 }else {include("404.html"); die();} ?><!DOCTYPE html>
 <html lang="en">

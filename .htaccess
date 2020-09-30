@@ -1,7 +1,8 @@
 
 ErrorDocument 404 /404.html
 RewriteEngine On
+RewriteRule    ^author/([0-9]+)$  post.php?id=$1    [NC,L]    # Rewrite all /article/ to post.php
 RewriteRule    ^article/([0-9]+)$  post.php?id=$1    [NC,L]    # Rewrite all /article/ to post.php
 RewriteRule    ^article/([0-9]+)/.*$  post.php?id=$1    [NC,L]    # Rewrite all /article/* to post.php
 RewriteRule    ^article/$  post.php    [NC,L]    #if no id provided, rewrite without get attr
-#RewriteRule    ^author/([a-Z]+)/$  author.php?name=$1   # [NC,L]    # Rewrite all /author/ to post.php
+#RewriteRule    ^author/([0-9]+)/$  author.php?name=$1   # [NC,L]    # Rewrite all /author/ to post.php
