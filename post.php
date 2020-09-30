@@ -24,9 +24,12 @@ if(isset($_GET["id"])){
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <meta name="description" content="<?php echo $res["short"];?>" />
+    <meta name="description" content="<?php echo $res["short"];?> | On spaceblog" />
     <meta name="author" content="<?php echo $res["author"];?>" />
+    <meta name="robots" content="index, follow" />
 
+<meta name="googlebot" content="index, follow" />
+  <?php echo date('M d Y', strtotime($res2[3]["created"]));?>
     <title><?php echo $res["title"];?> | spaceBlog</title>
 
     <!-- Bootstrap core CSS -->

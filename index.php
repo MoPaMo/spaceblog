@@ -148,7 +148,7 @@ function en2ar($a){
             </a>
             <p class="post-meta">
               Posted by
-              <a href="/author/<?php echo $res2[3]["author"];?>"><?php echo $res2[3]["author"];?></a>
+              <a href="/author.php?name=<?php echo $res2[3]["author"];?>"><?php echo $res2[3]["author"];?></a>
               on <?php echo date('M d Y', strtotime($res2[3]["created"]));?>
             </p>
           </div>
