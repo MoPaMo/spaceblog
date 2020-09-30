@@ -29,7 +29,7 @@ if(isset($_GET["id"])){
     <meta name="robots" content="index, follow" />
 
 <meta name="googlebot" content="index, follow" />
-  <?php echo date('M d Y', strtotime($res2[3]["created"]));?>
+
     <title><?php echo $res["title"];?> | spaceBlog</title>
 
     <!-- Bootstrap core CSS -->
@@ -133,7 +133,7 @@ if(isset($_GET["id"])){
               <span class="meta"
                 >Posted by
                 <a href="#"><?php echo $res["author"];?> </a>
-                on <?php echo $res["created"];?> </span
+                on   <?php echo date('M d Y, H:i', strtotime($res["created"]));?> </span
               >
             </div>
           </div>

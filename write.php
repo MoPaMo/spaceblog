@@ -97,10 +97,18 @@ $stmt->execute();
 
     <form action="" method="POST">
       <div class="form-group">
-        <label for="imageinput">Image</label>
+         <div class="form-row">
+    <div class="col">
+      <label for="imageinput">Image</label>
         <input type="text" maxlength="50" class="form-control" id="imageinput" aria-describedby="imagehelp" name="image"  placeholder="Enter Hero Images URL"><small id="imagehelp" class="form-text text-muted">
         Enter the URL of a CC-BY-* image 
       </small>
+    </div>
+    <div class="col">
+      <img src="https://cdn.glitch.com/637778d7-facd-4553-820b-773fd6182020%2Fundraw_image_post_24iy.svg?v=1601474780699" id="imgpreview">
+    </div>
+  </div>
+        
     </div>
       <div class="form-group">
         <label for="titleinput">Title</label>
@@ -178,17 +186,11 @@ $stmt->execute();
 <script>
   
 // Must be triggered some kind of "user activation"
-function share(){
-  if (navigator.share) {
-  navigator.share({
-    title: 'web.dev',
-    text: 'Check out web.dev.',
-    url: 'https://web.dev/',
-  })
-    .then(() => console.log('Successful share'))
-    .catch((error) => console.log('Error sharing', error));
-}
-}
+$(document).ready(function(){
+  $("#imageinput").keydown(function(){
+    $("#imgpreview").attr("src", $("#imageinput").val());
+  });
+});
   </script>
 </body>
 
