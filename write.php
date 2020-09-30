@@ -29,7 +29,7 @@ $stmt->execute();
   <meta name="description" content="A personal blog">
   <meta name="author" content="MoPaMo">
 
-  <title>spaceBlog</title>
+  <title>Write a new Article | spaceBlog</title>
 
   <!-- Bootstrap core CSS -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
@@ -41,6 +41,11 @@ $stmt->execute();
 
   <!-- Custom styles for this template -->
   <link href="/clean-blog.min.css" rel="stylesheet">
+  <style>
+    #imgpreview{
+      max-width:5vw;
+    }
+  </style>
 
 </head>
 
@@ -99,7 +104,7 @@ $stmt->execute();
       <div class="form-group">
          <div class="form-row">
     <div class="col">
-      <label for="imageinput">Image</label>
+      <label for="imageinput"><i class="fas fa-images"></i> Image </label>
         <input type="text" maxlength="50" class="form-control" id="imageinput" aria-describedby="imagehelp" name="image"  placeholder="Enter Hero Images URL"><small id="imagehelp" class="form-text text-muted">
         Enter the URL of a CC-BY-* image 
       </small>
@@ -111,26 +116,26 @@ $stmt->execute();
         
     </div>
       <div class="form-group">
-        <label for="titleinput">Title</label>
-        <input type="text" maxlength="50" class="form-control" id="titleinput" name="title" placeholder="Enter Title">
+        <label for="titleinput"><i class="fas fa-heading"></i> Title</label>
+        <input type="text" maxlength="50" class="form-control" id="titleinput" name="title" autofocus placeholder="Enter Title">
     </div>
       <div class="form-group">
-        <label for="shortInput">Short Description</label>
+        <label for="shortInput"><i class="fas fa-subscript"></i> Short Description</label>
         <input type="text" maxlength="50" class="form-control" name="short" id="shortInput" aria-describedby="emailHelp" placeholder="Enter Short Description">
     </div>
     <div class="form-group">
-        <label for="content">Content</label>
+        <label for="content"><i class="fas fa-font"></i>Content</label>
       <textarea rows="5" class="form-control" id="content" name="content" aria-describedby="postContent" placeholder="Enter Your Content"></textarea>
     </div>
     <div class="form-group">
-      <label for="author">Your Name</label>
+      <label for="author"><i class="fas fa-user"></i> Your Name</label>
       <input type="text" maxlength="50" class="form-control" id="author" name="author" aria-describedby="authorHelp" placeholder="Enter Your Name"/>
       <small id="authorHelp" class="form-text text-muted">
         Your name will be shown at your posts
       </small>
     </div>
     <div class="form-group">
-      <label for="exampleInputPassword1">Password</label>
+      <label for="exampleInputPassword1"><i class="fas fa-key"></i> Password</label>
       <input type="password" class="form-control" id="exampleInputPassword1" name="pwd" placeholder="Enter Your Admin-Password">
     </div>
   
@@ -187,7 +192,7 @@ $stmt->execute();
   
 // Must be triggered some kind of "user activation"
 $(document).ready(function(){
-  $("#imageinput").keydown(function(){
+  $("#imageinput").keyup(function(){
     $("#imgpreview").attr("src", $("#imageinput").val());
   });
 });
