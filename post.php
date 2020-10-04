@@ -344,10 +344,12 @@ if(isset($_GET["id"])){
     <script src="/clean-blog.min.js"></script>
     <script>
       $(document).ready(function(){
-        var images = $('.thumbnailArrows').children('img').map(function(){
+        /*var images = $('.thumbnailArrows').children('img').map(function(){
           return $(this).attr('src')
-        })
-        
+        })*/
+        $("#art img").each(function(){
+                           $("#imgsrcs").append($(this).attr('src'));
+                           });
       })
     </script>
   </body>
