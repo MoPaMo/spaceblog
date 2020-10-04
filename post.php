@@ -58,6 +58,9 @@ if(isset($_GET["id"])){
     <!-- Custom styles for this template -->
     <link href="/clean-blog.min.css" rel="stylesheet" />
     <style>
+      article img{max-width:40vw}
+    </style>
+    <style>
       ul.share-buttons {
         list-style: none;
         padding: 0;
@@ -159,7 +162,6 @@ if(isset($_GET["id"])){
                 >NASA @ Unsplash</a
               >.<?php }
               else echo "<a href=\"".$res["image"]."\">Title Photo</a>";?><br/>
-            </p>
           </div>
         </div>
 <hr/>

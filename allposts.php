@@ -1,13 +1,4 @@
-<?php
-include("db.php");
-$conn=db();
-  $res1=$conn->query("SELECT * FROM posts ORDER BY created desc;");
-  $res2=$res1->fetch_all(MYSQLI_ASSOC);
-function en2ar($a){
-  return str_replace("%20","-",str_replace("+","-",urlencode($a)));
-}
-
-?><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -18,7 +9,7 @@ function en2ar($a){
     <meta name="description" content="A personal blog" />
     <meta name="author" content="MoPaMo" />
 
-    <title>spaceBlog</title>
+    <title>All Posts | spaceBlog</title>
 
     <!-- Bootstrap core CSS -->
     <link
@@ -45,14 +36,13 @@ function en2ar($a){
 
     <!-- Custom styles for this template -->
     <link href="clean-blog.min.css" rel="stylesheet" />
-    
   </head>
 
   <body>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand" href="/index.php">spaceBlog</a>
+        <a class="navbar-brand" href="index.html">Start Bootstrap</a>
         <button
           class="navbar-toggler navbar-toggler-right"
           type="button"
@@ -68,16 +58,16 @@ function en2ar($a){
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="/">Home</a>
+              <a class="nav-link" href="/index.php">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="about.html">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="write.php">Write a Post</a>
+              <a class="nav-link" href="post.html">Sample Post</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="search.html"><span class="fas fa-search"></span></a>
+              <a class="nav-link" href="contact.html">Contact</a>
             </li>
           </ul>
         </div>
@@ -85,17 +75,14 @@ function en2ar($a){
     </nav>
 
     <!-- Page Header -->
-    <header
-      class="masthead"
-      style="background-image: url('https://source.unsplash.com/user/nasa/daily')"
-    >
+    <header class="masthead" style="background-image: url('img/about-bg.jpg')">
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
-            <div class="site-heading">
-              <h1>spaceBlog</h1>
-              <span class="subheading"></span>
+            <div class="page-heading">
+              <h1>About Me</h1>
+              <span class="subheading">This is what I do.</span>
             </div>
           </div>
         </div>
@@ -104,60 +91,103 @@ function en2ar($a){
 
     <!-- Main Content -->
     <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="post-preview">
-            <a href="/article/<?php echo $res2[0]["id"];?>/<?php echo en2ar($res2[0]["title"]);?>">
-              <h2 class="post-title"><?php echo $res2[0]["title"];?></h2>
-              <h3 class="post-subtitle"><?php echo $res2[0]["short"];?></h3>
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <a
+            class="nav-link active"
+            id="home-tab"
+            data-toggle="tab"
+            href="#home"
+            role="tab"
+            aria-controls="home"
+            aria-selected="true"
+            >CSS-Frameworks</a
+          >
+        </li>
+        <li class="nav-item" role="presentation">
+          <a
+            class="nav-link"
+            id="profile-tab"
+            data-toggle="tab"
+            href="#profile"
+            role="tab"
+            aria-controls="profile"
+            aria-selected="false"
+            >JavaScript-Frameworks</a
+          >
+        </li>
+        <li class="nav-item" role="presentation">
+          <a
+            class="nav-link"
+            id="contact-tab"
+            data-toggle="tab"
+            href="#contact"
+            role="tab"
+            aria-controls="contact"
+            aria-selected="false"
+            >Hosting/CDN</a
+          >
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div
+          class="tab-pane fade show active"
+          id="home"
+          role="tabpanel"
+          aria-labelledby="home-tab"
+        ><br/>
+          <a
+            href="https://getbootstrap.com/docs/4.5/about/license/"
+            class="list-group-item list-group-item-action"
+            >Bootstrap 4.5 (MIT-license)
+          </a>
+
+          <a
+            href="https://startbootstrap.com/themes/clean-blog/"
+            class="list-group-item list-group-item-action"
+            >"Clean Blog"-Theme by Start Bootstrap (MIT-license)</a
+          >
+        </div>
+        <div
+          class="tab-pane fade"
+          id="profile"
+          role="tabpanel"
+          aria-labelledby="profile-tab"
+        ><br/>
+          <a
+            href="https://jquery.org/license/"
+            class="list-group-item list-group-item-action"
+            >jQuery (MIT-license)
+          </a>
+          <a
+            href="https://popper.js.org/"
+            class="list-group-item list-group-item-action"
+            >popper.js (MIT-license)
+          </a>
+          <a
+            href="https://getbootstrap.com/docs/4.5/about/license/"
+            class="list-group-item list-group-item-action"
+            >Bootstrap 4.5 (MIT-license)
+          </a>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="contact"
+          role="tabpanel"
+          aria-labelledby="contact-tab"
+        >
+          <br />
+          <div class="list-group">
+            <a
+              href="https://glitch.com/about"
+              class="list-group-item list-group-item-action"
+              >hosted on glitch<small>.com</small>
             </a>
-            <p class="post-meta">
-              Posted by
-              <a href="/author/<?php echo $res2[0]["author"];?>"><?php echo $res2[0]["author"];?></a>
-              on <?php echo date('M d Y', strtotime($res2[0]["created"]));?>
-            </p>
-          </div>
-          <hr />
-          <div class="post-preview">
-            <a href="/article/<?php echo $res2[1]["id"];?>/<?php echo en2ar($res2[1]["title"]);?>">
-              <h2 class="post-title"><?php echo $res2[1]["title"];?></h2>
-              <h3 class="post-subtitle"><?php echo $res2[1]["short"];?></h3>
-            </a>
-            <p class="post-meta">
-              Posted by
-              <a href="/author/<?php echo $res2[1]["author"];?>"><?php echo $res2[1]["author"];?></a>
-              on <?php echo date('M d Y', strtotime($res2[1]["created"]));?>
-            </p>
-          </div>
-          <hr />
-          <div class="post-preview">
-            <a href="/article/<?php echo $res2[2]["id"];?>/<?php echo en2ar($res2[2]["title"]);?>">
-              <h2 class="post-title"><?php echo $res2[2]["title"];?></h2>
-              <h3 class="post-subtitle"><?php echo $res2[2]["short"];?></h3>
-            </a>
-            <p class="post-meta">
-              Posted by
-              <a href="/author/<?php echo $res2[2]["author"];?>"><?php echo $res2[2]["author"];?></a>
-              on <?php echo date('M d Y', strtotime($res2[2]["created"]));?>
-            </p>
-          </div>
-          <hr />
-          <div class="post-preview">
-            <a href="/article/<?php echo $res2[3]["id"];?>/<?php echo en2ar($res2[3]["title"]);?>">
-              <h2 class="post-title"><?php echo $res2[3]["title"];?></h2>
-              <h3 class="post-subtitle"><?php echo $res2[3]["short"];?></h3>
-            </a>
-            <p class="post-meta">
-              Posted by
-              <a href="/author.php?name=<?php echo $res2[3]["author"];?>"><?php echo $res2[3]["author"];?></a>
-              on <?php echo date('M d Y', strtotime($res2[3]["created"]));?>
-            </p>
-          </div>
-          <hr />
-          <!-- Pager -->
-          <div class="clearfix">
-            <a class="btn btn-primary float-right" href="#"
-              >Older Posts &rarr;</a
+
+            <a
+              href="https://cdnjs.com/about"
+              class="list-group-item list-group-item-action"
+              >CDN by CDN.js</a
             >
           </div>
         </div>
@@ -198,10 +228,6 @@ function en2ar($a){
               </li>
             </ul>
             <p class="copyright text-muted">Copyright &copy; MoPaMo 2020</p>
-            
-
-
-
           </div>
         </div>
       </div>
@@ -213,7 +239,5 @@ function en2ar($a){
 
     <!-- Custom scripts for this template -->
     <script src="clean-blog.min.js"></script>
-  
-
   </body>
 </html>
