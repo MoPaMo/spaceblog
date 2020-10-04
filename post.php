@@ -150,8 +150,10 @@ if(isset($_GET["id"])){
             <?php
             echo $res["content"];
               ?></article>
-
-            <p id="imgsrcs"><?php if($res["image"]==null){ ?>
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#imgsrcs" aria-expanded="false" aria-controls="collapseExample">
+    Button with data-target
+  </button>
+            <div class="collapse" id="imgsrcs"><?php if($res["image"]==null){ ?>
                Title Photo by 
               <a class="" href="https://www.unsplash.com/photos/@nasa/"
                 >NASA @ Unsplash</a
