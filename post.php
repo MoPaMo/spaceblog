@@ -142,15 +142,16 @@ if(isset($_GET["id"])){
     </header>
 
     <!-- Post Content -->
-    <article>
+    
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
+            <article id="art">
             <?php
             echo $res["content"];
-            ?>
+              ?></article>
 
-            <p><?php if($res["image"]==null){ ?>
+            <p id="imgsrcs"><?php if($res["image"]==null){ ?>
                Photos by 
               <a class="" href="https://www.unsplash.com/photos/@nasa/"
                 >NASA @ Unsplash</a
@@ -281,7 +282,7 @@ if(isset($_GET["id"])){
           </li>
         </ul>
       </div>
-    </article>
+    
     <hr />
 
     <!-- Footer -->
@@ -337,8 +338,17 @@ if(isset($_GET["id"])){
     .then(() => console.log('Successful share'))
     .catch((error) => console.log("Share menu not working"));
 }else{alert("The share menu is not available in your browser :(")}
-}</script>
-    <script src="/clean-blog.min.js"></script>
+}
     
+  </script>
+    <script src="/clean-blog.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        var images = $('.thumbnailArrows').children('img').map(function(){
+          return $(this).attr('src')
+        })
+        
+      })
+    </script>
   </body>
 </html>
