@@ -85,11 +85,11 @@ $stmt->execute();
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="post-heading">
-            <h1>Man must explore, and this is exploration at its greatest</h1>
-            <h2 class="subheading">Problems look mighty small from 150 miles up</h2>
+            <h1>Write a new blog post</h1>
+            <h2 class="subheading">We're waiting for your next post!</h2>
             <span class="meta">Posted by
-              <a href="#">Start Bootstrap</a>
-              on August 24, 2019</span>
+              <a href="#">You</a>
+              on <span id="datenow">Now</span></span>
           </div>
         </div>
       </div>
@@ -105,7 +105,7 @@ $stmt->execute();
          <div class="form-row">
     <div class="col">
       <label for="imageinput"><i class="fas fa-images"></i> Image </label>
-        <input type="text" maxlength="50" class="form-control" id="imageinput" aria-describedby="imagehelp" name="image"  placeholder="Enter Hero Images URL"><small id="imagehelp" class="form-text text-muted">
+        <input type="url" maxlength="1500" class="form-control" id="imageinput" aria-describedby="imagehelp" name="image"  placeholder="Enter Hero Images URL"><small id="imagehelp" class="form-text text-muted">
         Enter the URL of a CC-BY-* image 
       </small>
     </div>
@@ -124,8 +124,11 @@ $stmt->execute();
         <input type="text" maxlength="50" class="form-control" name="short" id="shortInput" aria-describedby="emailHelp" placeholder="Enter Short Description">
     </div>
     <div class="form-group">
-        <label for="content"><i class="fas fa-font"></i>Content</label>
+      <label for="content"><i class="fas fa-font"></i>Content</label>
       <textarea rows="5" class="form-control" id="content" name="content" aria-describedby="postContent" placeholder="Enter Your Content"></textarea>
+      <small id="authorHelp" class="form-text text-muted">
+        Enter your creative, innovative Article. We're supporting <a href="https://en.wikipedia.org/wiki/Markdown">Markdown formatting</a>, so take alook at the <a href="">Markdown Cheatsheet</a>!
+      </small>
     </div>
     <div class="form-group">
       <label for="author"><i class="fas fa-user"></i> Your Name</label>
