@@ -42,7 +42,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+        <a class="navbar-brand" href="/index.php">spaceBlog</a>
         <button
           class="navbar-toggler navbar-toggler-right"
           type="button"
@@ -58,16 +58,16 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="/index.php">Home</a>
+              <a class="nav-link" href="/">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="about.html">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="post.html">Sample Post</a>
+              <a class="nav-link" href="write.php">Write a Post</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
+              <a class="nav-link" href="search.html"><span class="fas fa-search"></span></a>
             </li>
           </ul>
         </div>
@@ -81,8 +81,8 @@
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="page-heading">
-              <h1>About Me</h1>
-              <span class="subheading">This is what I do.</span>
+              <h1>Archive</h1>
+              <span class="subheading">Read through our library…</span>
             </div>
           </div>
         </div>
@@ -91,107 +91,40 @@
 
     <!-- Main Content -->
     <div class="container">
-      <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item" role="presentation">
-          <a
-            class="nav-link active"
-            id="home-tab"
-            data-toggle="tab"
-            href="#home"
-            role="tab"
-            aria-controls="home"
-            aria-selected="true"
-            >CSS-Frameworks</a
-          >
-        </li>
-        <li class="nav-item" role="presentation">
-          <a
-            class="nav-link"
-            id="profile-tab"
-            data-toggle="tab"
-            href="#profile"
-            role="tab"
-            aria-controls="profile"
-            aria-selected="false"
-            >JavaScript-Frameworks</a
-          >
-        </li>
-        <li class="nav-item" role="presentation">
-          <a
-            class="nav-link"
-            id="contact-tab"
-            data-toggle="tab"
-            href="#contact"
-            role="tab"
-            aria-controls="contact"
-            aria-selected="false"
-            >Hosting/CDN</a
-          >
-        </li>
-      </ul>
-      <div class="tab-content" id="myTabContent">
-        <div
-          class="tab-pane fade show active"
-          id="home"
-          role="tabpanel"
-          aria-labelledby="home-tab"
-        ><br/>
-          <a
-            href="https://getbootstrap.com/docs/4.5/about/license/"
-            class="list-group-item list-group-item-action"
-            >Bootstrap 4.5 (MIT-license)
-          </a>
+      <?php
+include("db.php");
+$stmt = db()->prepare("SELECT * FROM posts ORDER BY created;");
+   /*$stmt->bind_param("ss", $title, $short);
+    $title = $_GET["name"];
+  $short=$_GET["name"];*/
+$stmt->execute();
+  $result = $stmt->get_result();
+while ($data = $result->fetch_assoc())
+{
+    $statistic[] = $data;
+}
 
-          <a
-            href="https://startbootstrap.com/themes/clean-blog/"
-            class="list-group-item list-group-item-action"
-            >"Clean Blog"-Theme by Start Bootstrap (MIT-license)</a
-          >
-        </div>
-        <div
-          class="tab-pane fade"
-          id="profile"
-          role="tabpanel"
-          aria-labelledby="profile-tab"
-        ><br/>
-          <a
-            href="https://jquery.org/license/"
-            class="list-group-item list-group-item-action"
-            >jQuery (MIT-license)
-          </a>
-          <a
-            href="https://popper.js.org/"
-            class="list-group-item list-group-item-action"
-            >popper.js (MIT-license)
-          </a>
-          <a
-            href="https://getbootstrap.com/docs/4.5/about/license/"
-            class="list-group-item list-group-item-action"
-            >Bootstrap 4.5 (MIT-license)
-          </a>
-        </div>
-        <div
-          class="tab-pane fade"
-          id="contact"
-          role="tabpanel"
-          aria-labelledby="contact-tab"
-        >
-          <br />
-          <div class="list-group">
-            <a
-              href="https://glitch.com/about"
-              class="list-group-item list-group-item-action"
-              >hosted on glitch<small>.com</small>
+// Proof that it's working
+
+$res2=$statistic;
+  #echo $statistic[0]["author"];
+  if(count($res2)>0){
+    echo "<h4><i class=\"fas fa-archive\"></i> Currently ".count($res2)." posts in our library:</h4>";
+      foreach($res2 as $res){?>
+          <div class="post-preview">
+            <a href="/article/<?php echo $res["id"];?>">
+              <h2 class="post-title"><?php echo $res["title"];?></h2>
+              <h3 class="post-subtitle"><?php echo $res["short"];?></h3>
             </a>
-
-            <a
-              href="https://cdnjs.com/about"
-              class="list-group-item list-group-item-action"
-              >CDN by CDN.js</a
-            >
+            <p class="post-meta">
+              Posted by
+              <a href="/author/<?php echo $res["author"];?>"><?php echo $res["author"];?></a>
+              on <?php echo $res["created"];?>
+            </p>
           </div>
-        </div>
-      </div>
+          <hr /><?php }}else{echo "<img style=\"max-width:50vw\" src=\"https://cdn.glitch.com/637778d7-facd-4553-820b-773fd6182020%2Fundraw_empty_xct9.svg?v=1599632299973\"> <h2>Nothing found</h2><small>Search is case insensitive!</small>";}
+  /**/ ?>
+      
     </div>
 
     <hr />

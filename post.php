@@ -154,7 +154,7 @@ if(isset($_GET["id"])){
             echo $res["content"];
               ?></article>
             <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#imgsrcs" aria-expanded="false" aria-controls="collapseExample">
-    Button with data-target
+    VIEW IMAGE SOURCE
   </button>
             <div class="collapse" id="imgsrcs"><?php if($res["image"]==null){ ?>
                Title Photo by 
