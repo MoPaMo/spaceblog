@@ -152,11 +152,11 @@ if(isset($_GET["id"])){
               ?></article>
 
             <p id="imgsrcs"><?php if($res["image"]==null){ ?>
-               Photos by 
+               Title Photo by 
               <a class="" href="https://www.unsplash.com/photos/@nasa/"
                 >NASA @ Unsplash</a
               >.<?php }
-              else echo "<a href=\"".$res["image"]."\">Image source</a>";?>
+              else echo "<a href=\"".$res["image"]."\">Title Photo</a>";?><br/>
             </p>
           </div>
         </div>
@@ -348,7 +348,7 @@ if(isset($_GET["id"])){
           return $(this).attr('src')
         })*/
         $("#art img").each(function(){
-                           $("#imgsrcs").append($(this).attr('src'));
+                           $("#imgsrcs").append("<a href=\""+$(this).attr('src')+"\">"+$(this).attr('src')+"</a>");
                            });
       })
     </script>
