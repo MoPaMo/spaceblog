@@ -127,7 +127,7 @@ $stmt->execute();
       <label for="content"><i class="fas fa-font"></i>Content</label>
       <textarea rows="5" class="form-control" id="content" name="content" aria-describedby="postContent" placeholder="Enter Your Content"></textarea>
       <small id="authorHelp" class="form-text text-muted">
-        Enter your creative, innovative Article. We're supporting <a href="https://en.wikipedia.org/wiki/Markdown">Markdown formatting</a>, so take alook at the <a href="">Markdown Cheatsheet</a>!
+        Enter your creative, innovative Article. We're supporting <a target="Markdown" href="https://en.wikipedia.org/wiki/Markdown">Markdown formatting</a>, so take a look at the <a target="Markdown" href="https://daringfireball.net/projects/markdown/syntax">official Markdown Cheatsheet</a>!
       </small>
     </div>
     <div class="form-group">

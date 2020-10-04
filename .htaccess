@@ -1,4 +1,5 @@
 
+ErrorDocument 500 /500.html
 ErrorDocument 404 /404.html
 RewriteEngine On
 RewriteRule    ^author/([0-9]+)$  post.php?id=$1    [NC,L]    # Rewrite all /article/ to post.php
