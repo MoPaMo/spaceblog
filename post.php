@@ -352,7 +352,7 @@ if(isset($_GET["id"])){
           return $(this).attr('src')
         })*/
         $("#art img").each(function(){
-                           $("#imgsrcs").append("<a href=\""+$(this).attr('src')+"\">"+$(this).attr('src')+"</a>");
+                           $("#imgsrcs").append("<a href=\""+$(this).attr('src')+"\">'"+$(this).attr('alt')+"': "+$(this).attr('src')+"</a>");
                            });
       })
     </script>
